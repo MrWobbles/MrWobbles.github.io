@@ -1,4 +1,4 @@
-$(document).on('ready', function(){
+$(function(){
     console.log("Document Ready");
     $('.mouse').on('click', function(){  
         $('html, body').animate({scrollTop: '+=150px'}, 800);
