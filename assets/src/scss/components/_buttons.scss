@@ -1,0 +1,23 @@
+.btn{
+    @include Jost-Bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #000;
+    display: inline-block;
+    width: auto;
+    padding: 20px 40px;
+    text-decoration: none;
+    letter-spacing: .05rem;
+    transition: all .33s ease-in-out;
+
+    &.btn-primary  {
+        background: #960018;
+    }
+
+    &:hover,
+    &:focus{
+        background: #fff;
+        color: #000;
+    }
+}

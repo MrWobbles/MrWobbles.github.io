@@ -1,0 +1,42 @@
+/*
+SCSS Build File
+
+
+General Layout
+*/
+@import "components/layout";
+@import "utilities/mixins";
+@import "utilities/helper-classes";
+@import "utilities/variables";
+
+/*
+
+Header Styles
+
+*/
+@import "components/header";
+@import "components/branding";
+@import "components/navigation";
+
+/*
+
+Banner Styles
+*/
+@import "components/banner";
+@import "components/mouse-scroll";
+
+/*
+
+
+Content Styles
+
+*/
+@import "components/typography";
+@import "components/buttons";
+
+/*
+
+Footer Styles
+
+*/
+@import "components/footer";

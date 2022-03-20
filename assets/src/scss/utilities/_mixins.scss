@@ -1,0 +1,13 @@
+
+@mixin width-restrict($outer-margin-mobile: 120, $outer-margin-desktop: 720){
+    $outer-margin-mobile: $outer-margin-mobile * 1px;
+    $outer-margin-desktop: $outer-margin-desktop * 1px;
+  
+    width: 100%;
+    max-width: calc(100% - $outer-margin-mobile);
+    margin: 0 auto;
+  
+    @media all and (min-width: $medium){
+      max-width: calc(100% - $outer-margin-desktop);
+    }
+  }

@@ -1,0 +1,37 @@
+:root{
+    --nav-height: 115px;
+}
+.page-banner{
+    position: relative;
+    z-index: -1;
+    background: transparent;
+    height: calc(100vh - var(--nav-height));
+    padding-top: var(--nav-height);
+    background: #0f0d1d url('/assets/dist/images/banner-background.png') no-repeat 100% top;
+    background-size: cover;
+
+    .page-banner-content{
+        @include width-restrict;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - var(--nav-height));
+    }
+
+    h1{
+        @include Jost-Black;
+        font-size: 90px;
+        text-indent: 17px;
+        letter-spacing: -.002rem;
+        text-transform: uppercase;
+        color: #fff;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+    }
+
+    .btn{
+        margin-top: 40px;
+        align-self: flex-start;
+    }
+}
