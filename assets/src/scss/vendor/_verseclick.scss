@@ -1,1 +1,20 @@
-.vcVerseLink{text-decoration:none;}
+.vcVerseLink{
+    color: #f2f4f8;
+    text-decoration:none;
+
+    &:hover,
+    &:focus{
+        color: #960018;
+    }
+
+    .light-section &,
+    .gray-section & {
+        color: #0f0d1d;
+
+        &:hover,
+        &:focus{
+            color: #960018;
+        }
+    
+    }
+}

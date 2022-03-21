@@ -1,0 +1,15 @@
+.sermons{
+//
+}
+
+.sermon-overview{
+    display: flex;
+
+    .sermon-overview{
+        order: 2;
+    }
+
+    .link-images{
+        order: 1;
+    }
+}
