@@ -8,7 +8,8 @@ section{
     &.light-section{
         background: #fff;
 
-        h2{
+        h2,
+        h3{
             color: #0f0d1d;
         }
 
@@ -20,7 +21,8 @@ section{
     &.gray-section{
         background: #f2f4f8;
 
-        h2{
+        h2,
+        h3{
             color: #0f0d1d;
         }
 
@@ -29,7 +31,8 @@ section{
         }
     }
 
-    h2{
+    h2,
+    h3{
         @include Jost-Black;
         color: #fff;
         text-transform: uppercase;
@@ -42,6 +45,14 @@ section{
         @include Jost;
         font-size: 18px;
         color: #8f8da0;
+    }
+
+    .scripture-reference{
+        color: #fff;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        vertical-align: super;    
     }
 
     p{
