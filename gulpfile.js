@@ -91,7 +91,6 @@ function buildThemeStyles(cb) {
       sourceMap: true
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(dest(paths.dist + '/css/'));
 
   cb();

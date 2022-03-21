@@ -1,3 +1,4 @@
+console.log("Document");
 $(function(){
     console.log("Document Ready");
     $('.mouse').on('click', function(){  
