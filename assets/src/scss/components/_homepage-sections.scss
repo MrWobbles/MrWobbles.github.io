@@ -1,0 +1,50 @@
+section{
+    padding: 100px 0 150px;
+
+    .section-content{
+        @include width-restrict;
+    }
+
+    &.light-section{
+        background: #fff;
+
+        h2{
+            color: #0f0d1d;
+        }
+
+        p{
+            color: #222;
+        }
+    }
+
+    &.gray-section{
+        background: #f2f4f8;
+
+        h2{
+            color: #0f0d1d;
+        }
+
+        p{
+            color: #222;
+        }
+    }
+
+    h2{
+        @include Jost-Black;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 50px;
+        letter-spacing: -.002rem;
+        margin: 0 0 10px 0;
+    }
+
+    .callout-text{
+        @include Jost-Medium;
+        font-size: 18px;
+        color: #8f8da0;
+    }
+
+    p{
+        color: #f2f4f8;
+    }
+}
