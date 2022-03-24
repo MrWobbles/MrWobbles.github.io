@@ -2,6 +2,7 @@
     width: 100%;
     background: transparent url('/assets/dist/images/Callout-Background.png') no-repeat center center;
     background-size: cover;
+    padding: 70px 0;
 
     .section-content{
         display: flex;
@@ -15,5 +16,6 @@
         font-size: 40px;
         text-transform: uppercase;
         letter-spacing: -.02rem;
+        max-width: 50%;
     }
 }
