@@ -20,4 +20,15 @@
         background: #fff;
         color: #000;
     }
+
+    &.btn-secondary{
+        background: #fff;
+        color: #0f0d1d;
+
+        &:hover,
+        &:focus{
+            color: #fff;
+            background: #0f0d1d;
+        }
+    }
 }

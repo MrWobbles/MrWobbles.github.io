@@ -1,0 +1,19 @@
+.callout-section{
+    width: 100%;
+    background: transparent url('/assets/dist/images/Callout-Background.png') no-repeat center center;
+    background-size: cover;
+
+    .section-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h2{
+        @include Jost-Black;
+        color: #fff;
+        font-size: 40px;
+        text-transform: uppercase;
+        letter-spacing: -.02rem;
+    }
+}
