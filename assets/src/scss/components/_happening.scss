@@ -1,26 +1,95 @@
-.events{
+.events {
     padding-top: 185px;
     background-image: url('/assets/dist/images/wavy-lines.png');
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 25% auto;
 
-    h2, .callout-text{
+    h2,
+    .callout-text {
         width: 100%;
         text-align: center;
     }
-    
-    ul{
+
+    .callout-text {
+        margin-bottom: 50px;
+    }
+
+    ul {
         display: flex;
         flex-wrap: wrap;
 
-        li{
+        li {
             width: calc(33% - 30px);
             margin-right: 45px;
 
-            &:nth-child(3n){
+            &:nth-child(3n) {
                 margin-right: 0;
             }
+        }
+    }
+
+    figure {
+        margin: 0;
+
+        img {
+            width: calc(100% - 40px);
+        }
+    }
+}
+
+.event-details {
+    background: #fff;
+    margin-left: 30px;
+    top: -80px;
+    position: relative;
+    padding: 20px 30px;
+    height: 250px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+
+    .date {
+        font-size: 12px;
+        color: #fff;
+        text-transform: uppercase;
+        background: #3c72fc;
+        padding: 5px 20px;
+        position: absolute;
+        top: -28px;
+        font-weight: 600;
+        left: 0;
+    }
+
+    h3 a {
+        color: #0f0d1d;
+        text-decoration: none;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-family: 'Jost';
+        letter-spacing: -0.02rem;
+    }
+
+    p {
+        color: #726f84;
+        font-size: 18px;
+        line-height: 2rem;
+    }
+
+    > a {
+        position: absolute;
+        bottom: 30px;
+        width: calc(100% - 80px);
+        color: #0f0d1d;
+        text-decoration: none;
+
+        &:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background: #0f0d1d;
+            display: block;
+            border-radius: 5px;
+            position: absolute;
+            bottom: -12px;
         }
     }
 }
