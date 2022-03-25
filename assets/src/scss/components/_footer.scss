@@ -2,7 +2,42 @@ footer {
     background: #2c353c;
     color: #fff;
 
-    .footer-content{
+    .footer-content {
         @include width-restrict;
+    }
+
+    .logo {
+        border: 0;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-style: italic;
+            max-width: 350px;
+            text-align: left;
+            margin: 0 0 0 50px;
+
+            a {
+                color: #fff;
+                display: block;
+                float: right;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+
+        hr {
+            width: 100%;
+            border: 0;
+            background: rgba(255, 255, 255, 0.05);
+            height: 2px;
+        }
     }
 }
