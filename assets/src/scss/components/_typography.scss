@@ -1,0 +1,29 @@
+.page-content {
+    ul:not([class]) {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 0 0 0 20px;
+            position: relative;
+
+            &:before {
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-radius: 8px;
+                background-color: #3c72fc;
+                position: absolute;
+                left: 0;
+                top: 8px;
+            }
+        }
+    }
+
+    a {
+        font-weight: bold;
+        color: #3c72fc;
+        text-decoration: none;
+    }
+}

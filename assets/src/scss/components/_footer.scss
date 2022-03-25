@@ -9,24 +9,25 @@ footer {
 
     .logo {
         border: 0;
-        margin: 0;
-        padding: 60px 0 30px;
+        padding: 0 0 20px 0;
+        text-align: left;
     }
 
     .contact {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
+        padding-top: 60px;
 
         p {
             font-style: italic;
-            max-width: 350px;
+            max-width: 65%;
             text-align: left;
-            margin: 0 0 0 50px;
+            margin: 0 auto;
 
             a {
-                float: right;
+                display: block;
+                text-align: right;
             }
         }
 
@@ -42,7 +43,7 @@ footer {
             border: 0;
             background: rgba(255, 255, 255, 0.05);
             height: 2px;
-            margin: 20px 0 40px;
+            margin: 60px 0;
         }
     }
 }
@@ -52,9 +53,8 @@ footer {
     margin-right: 0;
 
     > div {
-        background: #0f0d1d;
-        padding: 25px 30px;
-        border-radius: 5px;
+        background: transparent;
+        padding: 0;
         margin-left: 60px;
         position: relative;
 
@@ -99,7 +99,7 @@ footer {
 
     input[type='submit'] {
         border: 0;
-        background: red;
+        background: #960018;
         color: #fff;
         font-weight: bold;
         position: relative;
