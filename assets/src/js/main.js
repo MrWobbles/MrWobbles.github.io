@@ -14,5 +14,10 @@ $(function(){
 
     $('.newsletter-signup input[type="email"]').on('blur', function(){
         $('.newsletter-signup').removeClass('signup-active')
+        $('.newsletter-signup input[type="email"]').val('');
     });
+
+    $('.accordion').on('click', function(){
+        $(this).toggleClass('acc-open');
+    })
 });
