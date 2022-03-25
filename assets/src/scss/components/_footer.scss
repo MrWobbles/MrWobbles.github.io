@@ -1,3 +1,8 @@
 footer {
-    background: #333;
+    background: #2c353c;
+    color: #fff;
+
+    .footer-content{
+        @include width-restrict;
+    }
 }
