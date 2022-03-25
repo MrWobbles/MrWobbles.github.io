@@ -50,7 +50,7 @@ footer {
 .newsletter-signup {
     margin-left: auto;
     margin-right: 0;
-    
+
     > div {
         background: #0f0d1d;
         padding: 25px 30px;
@@ -69,6 +69,7 @@ footer {
 .mc-field-group {
     position: relative;
     height: 44px;
+
     label {
         position: absolute;
         top: 53%;
@@ -76,6 +77,12 @@ footer {
         color: #000;
         z-index: 1;
         transform: translateY(-50%);
+        pointer-events: none;
+        opacity: 1;
+
+        .signup-active & {
+            opacity: 0;
+        }
     }
 
     .email {

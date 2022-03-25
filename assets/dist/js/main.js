@@ -1,2 +1,2 @@
-$(function(){$(".mouse").on("click",function(){$("html, body").animate({scrollTop:"+=150px"},800)}),$("html, body").on("scroll",function(){var o=$(this).scrollTop();$(".page-banner").css("background-position","0% "+parseInt(-o/10)+"%")})});
+$(function(){$(".mouse").on("click",function(){$("html, body").animate({scrollTop:"+=150px"},800)}),$("html, body").on("scroll",function(){var n=$(this).scrollTop();$(".page-banner").css("background-position","0% "+parseInt(-n/10)+"%")}),$('.newsletter-signup input[type="email"]').on("focus",function(){$(".newsletter-signup").addClass("signup-active")}),$('.newsletter-signup input[type="email"]').on("blur",function(){$(".newsletter-signup").removeClass("signup-active")})});
 //# sourceMappingURL=main.js.map
