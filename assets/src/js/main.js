@@ -20,4 +20,8 @@ $(function(){
     $('.accordion').on('click', function(){
         $(this).toggleClass('acc-open');
     })
+
+    $('.menu-toggle').on('click', function(){
+        $('body').toggleClass('nav-open');
+    });
 });

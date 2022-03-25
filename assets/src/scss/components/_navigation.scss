@@ -1,3 +1,7 @@
+body.nav-open {
+    overflow: hidden;
+}
+
 nav.primary {
     width: 100%;
     display: flex;
@@ -10,13 +14,67 @@ nav.primary {
         padding: 0;
         justify-content: flex-start;
 
+        @media all and (min-width: 1280px) {
+            flex-direction: row;
+            position: static;
+            width: auto;
+        }
+
         &.navigation {
-            width: 100%;
-            padding: 0 40px;
+            position: fixed;
+            padding: 0;
+            width: 100vw;
+            height: calc(100vh - 150px);
+            background: rgba(0, 0, 0, 0.9);
+            left: 100%;
+            top: 115px;
+            z-index: 10;
+            flex-direction: column;
+            transition: 0.33s all ease-in-out;
+
+            @media all and (min-width: 1280px){
+                position: static;
+                width: 100%;
+                height: auto;
+                background: transparent;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .nav-open & {
+                left: 0;
+            }
+
+            li {
+                padding: 0;
+                line-height: 100px;
+                height: 100px;
+                margin: 0;
+
+                @media all and (min-width: 1280px){
+                    line-height: 1rem;
+                    height: auto;
+                    margin-right: 40px;
+                }
+            }
 
             a {
+                padding: 0 40px;
+                width: 100%;
+                height: 100%;
+                display: block;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+                @media all and (min-width: 1280px){
+                    width: auto;
+                    height: auto;
+                    border: 0;
+                    padding: 0;
+                    display: inline-block;
+                }
+
                 &::after {
-                    content: '';
                     position: absolute;
                     height: 2px;
                     background: #fff;
@@ -25,13 +83,17 @@ nav.primary {
                     left: 0;
                     border-radius: 2px;
                     transition: all 0.33s ease-in-out;
+
+                    @media all and (min-width: 1280px) {
+                        content: '';
+                    }
                 }
 
                 &:hover::after {
                     width: 100%;
                 }
 
-                &.active{
+                &.active {
                     &::after {
                         width: 15px;
                     }
@@ -45,6 +107,7 @@ nav.primary {
         &.social-media {
             padding-right: 25px;
             border-right: 1px solid rgba(255, 255, 255, 0.25);
+            margin-left: auto;
 
             li {
                 margin-right: 0;
@@ -82,19 +145,110 @@ nav.primary {
     }
 }
 
+/* mobile menu toggle button */
+.menu-toggle {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 116px;
+    padding: 40px 25px;
+    cursor: pointer;
+    box-sizing: border-box;
+    order: 4;
+
+    @media all and (min-width: 1280px){
+        display: none;
+    }
+
+    span {
+        margin: 0 auto;
+        position: relative;
+        top: 12px;
+        transition-duration: 0s;
+        transition-delay: 0.2s;
+        transition: background-color 0.3s;
+        width: 40px;
+        height: 6px;
+        background-color: #fff;
+        display: block;
+        opacity: 1;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            width: 40px;
+            height: 6px;
+            background-color: #fff;
+            display: block;
+            opacity: 1;
+        }
+
+        &::before {
+            margin-top: -12px;
+            transition-property: margin, transform;
+            transition-duration: 0.2s;
+            transition-delay: 0.2s, 0;
+        }
+
+        &::after {
+            margin-top: 12px;
+            transition-property: margin, transform;
+            transition-duration: 0.2s;
+            transition-delay: 0.2s, 0;
+        }
+    }
+
+    .nav-open & {
+        span {
+            background-color: rgba(0, 0, 0, 0);
+            transition: 0.3s background-color;
+
+            &::before {
+                margin-top: 0;
+                transform: rotate(45deg);
+                transition-delay: 0, 0.2s;
+            }
+
+            &::after {
+                margin-top: 0;
+                transform: rotate(-45deg);
+                transition-delay: 0, 0.2s;
+            }
+        }
+    }
+}
+
 .quick-contact {
-    width: 320px;
-    color: #fff;
-    padding: 0px 25px;
     font-size: 14px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     color: #e7e7e7;
+
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    text-align: center;
+    padding: 14px 0px;
+
+    @media all and (min-width: 1280px){
+        width: 320px;
+        flex-direction: column;
+        position: static;
+        padding: 0px 25px;
+        border: 0;
+        text-align: left;
+    }
 
     a {
         color: #fff;
         text-decoration: none;
+        margin-left: 15px;
+
+        @media all and (min-width: 1280px){
+            margin-left: 0;
+        }
     }
 }
 

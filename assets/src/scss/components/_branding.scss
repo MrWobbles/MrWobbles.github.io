@@ -1,8 +1,13 @@
 .logo {
-    width: 240px;
+    width: 100%;
     border-right: 1px solid rgba(255, 255, 255, 0.25);
     margin: 0;
     text-align: center;
+
+    @media all and (min-width: 768px){
+        max-width: 315px;
+        min-width: 315px;
+    }
 
     img {
         width: 80%;
