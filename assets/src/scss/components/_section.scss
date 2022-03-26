@@ -36,9 +36,13 @@ section{
         @include Jost-Black;
         color: #fff;
         text-transform: uppercase;
-        font-size: 50px;
+        font-size: 35px;
         letter-spacing: -.002rem;
         margin: 0 0 10px 0;
+
+        @media all and (min-width: 768px){
+            font-size: 50px;
+        }
     }
 
     .callout-text{

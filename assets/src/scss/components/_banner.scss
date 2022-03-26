@@ -1,8 +1,8 @@
-:root{
+:root {
     --nav-height: 115px;
 }
 
-.page-banner{
+.page-banner {
     position: relative;
     z-index: -1;
     background: transparent;
@@ -11,7 +11,7 @@
     background: #0f0d1d url('/assets/dist/images/banner-background.png') no-repeat 100% top;
     background-size: cover;
 
-    .page-banner-content{
+    .page-banner-content {
         @include width-restrict;
         display: flex;
         flex-direction: column;
@@ -19,32 +19,43 @@
         height: calc(100% - var(--nav-height));
     }
 
-    h1{
+    h1 {
         @include Jost-Black;
-        font-size: 90px;
-        text-indent: 17px;
-        letter-spacing: -.002rem;
+        letter-spacing: -0.002rem;
         text-transform: uppercase;
         color: #fff;
         width: 100%;
-        text-align: left;
         margin: 0;
+        font-size: 50px;
+        text-indent: 10px;
+        text-align: center;
+        line-height: 1.25em;
+
+        @media all and (min-width: 768px) {
+            font-size: 90px;
+            text-indent: 17px;
+            text-align: left;
+        }
     }
 
-    .btn{
-        margin-top: 40px;
+    .btn {
+        margin: 40px auto;
         align-self: flex-start;
+
+        @media all and (min-width: 768px) {
+            margin-left: 0;
+        }
     }
 }
 
-.subpage-banner{
+.subpage-banner {
     padding-top: 115px;
     height: 250px;
     display: flex;
     align-items: center;
     background: #0f0d1d url('/assets/dist/images/banner-background.png') no-repeat 100% bottom;
 
-    h1{
+    h1 {
         @include width-restrict;
         color: #fff;
         text-transform: uppercase;
