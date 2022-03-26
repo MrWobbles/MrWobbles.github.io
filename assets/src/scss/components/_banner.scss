@@ -31,7 +31,7 @@
         text-align: center;
         line-height: 1.25em;
 
-        @media all and (min-width: 768px) {
+        @media all and (min-width: $medium) {
             font-size: 90px;
             text-indent: 17px;
             text-align: left;
@@ -42,7 +42,7 @@
         margin: 40px auto;
         align-self: flex-start;
 
-        @media all and (min-width: 768px) {
+        @media all and (min-width: $medium) {
             margin-left: 0;
         }
     }

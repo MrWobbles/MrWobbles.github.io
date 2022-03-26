@@ -19,7 +19,7 @@
         letter-spacing: -.02rem;
         width: 100%;
 
-        @media all and (min-width: 768px){
+        @media all and (min-width: $medium){
             max-width: 50%;
         }
     }
