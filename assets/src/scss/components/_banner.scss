@@ -42,6 +42,7 @@
     height: 250px;
     display: flex;
     align-items: center;
+    background: #0f0d1d url('/assets/dist/images/banner-background.png') no-repeat 100% bottom;
 
     h1{
         @include width-restrict;
