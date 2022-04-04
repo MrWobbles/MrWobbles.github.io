@@ -1,0 +1,76 @@
+{
+    "foundations": [
+        {
+           "month":"0",
+           "title":"Integrity",
+           "description":"Doing the right thing no matter what, even when no one is looking.",
+           "image": "integrity.jpg"
+        },
+        {
+           "month":"1",
+           "title":"Faith",
+           "description":"Taking action to show you expect God to remain consistent.",
+           "image": "faith.jpg"
+        },
+        {
+           "month":"2",
+           "title":"Perseverance",
+           "description":"Staying on the right path even through hard times.",
+           "image": "perseverance.jpg"
+        },
+        {
+           "month":"3",
+           "title":"Courage",
+           "description":"Standing for what is right in the face of trials.",
+           "image": "courage.jpg"
+        },
+        {
+           "month":"4",
+           "title":"Humility",
+           "description":"Remembering that when God moves it is for His glory and not for us to be arrogant.",
+           "image": "humility.jpg"
+        },
+        {
+           "month":"5",
+           "title":"Willingness",
+           "description":"Being ready for God to move whether or not we see Him working right now.",
+           "image": "willingness.jpg"
+        },
+        {
+           "month":"6",
+           "title":"Wisdom",
+           "description":"Learning to make decisions based on God's instructions.",
+           "image": "widom.jpg"
+        },
+        {
+           "month":"7",
+           "title":"Commitment",
+           "description":"Being sold out to God and running to hard situations when He calls you there.",
+           "image": "commitment.jpg"
+        },
+        {
+           "month":"8",
+           "title":"Adventure",
+           "description":"Going when God tells you to go.",
+           "image": "adventure.jpg"
+        },
+        {
+           "month":"9",
+           "title":"Boldness",
+           "description":"Speaking when God tells you to speak.",
+           "image": "boldness.jpg"
+        },
+        {
+           "month":"10",
+           "title":"Gratitude",
+           "description":"Recognizing and Acknowledging the good that God has done in your life.",
+           "image": "gratitude.jpg"
+        },
+        {
+           "month":"11",
+           "title":"Hope",
+           "description":"Expecting God to continue moving and remain consistent",
+           "image": "hope.jpg"
+        }
+    ]
+ }
