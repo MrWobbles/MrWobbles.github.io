@@ -5,6 +5,7 @@ const { gulp, watch, series, dest, src } = require('gulp');
 const rename = require('gulp-rename');
 
 const themeName = "Calvary-Tallula";
+var fileinclude = require('gulp-file-include')
 
 // Base Path for Antilles 2.0
 const basePath = './';
@@ -123,9 +124,22 @@ function minifyImages(cb) {
   cb();
 }
 
+function fileInclude(cb){
+  src(['./pages/**/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(dest('./'));
+
+    cb();
+}
+
+
 // Site Functions
 function watchToBuild() {
   watch(paths.src + '/**/*', series(buildScripts, buildThemeStyles, minifyImages));
 }
 
 exports.default = series(buildScripts, buildThemeStyles, minifyImages, watchToBuild);
+exports.fileInclude = series(fileInclude);
