@@ -1,4 +1,10 @@
 $(function(){
+    //Set Active Menu
+    let stub = window.location.pathname.split('/')[1];
+
+    $('.' + stub).addClass('active');
+
+
     $('.mouse').on('click', function(){  
         $('html, body').animate({scrollTop: '+=150px'}, 800);
     });

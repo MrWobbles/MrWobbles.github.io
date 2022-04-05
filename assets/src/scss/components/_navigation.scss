@@ -32,8 +32,10 @@ nav.primary {
             flex-direction: column;
             transition: 0.33s all ease-in-out;
 
-            @media all and (min-width: 1280px){
+            @media all and (min-width: 1280px) {
                 position: static;
+                display: flex;
+                align-items: center;
                 width: 100%;
                 height: auto;
                 background: transparent;
@@ -49,24 +51,33 @@ nav.primary {
             li {
                 padding: 0;
                 line-height: 100px;
-                height: 100px;
+                min-height: 100px;
                 margin: 0;
+                position: relative;
 
-                @media all and (min-width: 1280px){
+                @media all and (min-width: 1280px) {
                     line-height: 1rem;
                     height: auto;
                     margin-right: 40px;
+                    min-height: 0;
+
+                    &:hover{
+                        .subnav{
+                            opacity: 1;
+                            pointer-events: all;
+                            top: 100%;
+                        }
+                    }
                 }
             }
 
-            a {
+            .nav-item {
                 padding: 0 40px;
                 width: 100%;
-                height: 100%;
                 display: block;
                 border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 
-                @media all and (min-width: 1280px){
+                @media all and (min-width: 1280px) {
                     width: auto;
                     height: auto;
                     border: 0;
@@ -89,8 +100,13 @@ nav.primary {
                     }
                 }
 
-                &:hover::after {
-                    width: 100%;
+                &:hover {
+                    cursor: pointer;
+                    &::after {
+                        width: 100%;
+                    }
+
+                    
                 }
 
                 &.active {
@@ -143,6 +159,45 @@ nav.primary {
         text-decoration: none;
         position: relative;
     }
+
+    ul.subnav {
+        display: block;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+        margin-top: -3px;
+        position: relative;
+
+        @media all and (min-width: 1280px) {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            top: calc(100% - 20px);
+            transition: all 0.33s ease-out;
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            border: 0;
+            background: rgba(0, 0, 0, .75);
+        }
+
+        li {
+            height: auto;
+            min-height: 0;
+            line-height: 2.75rem;
+            background: #000;
+            border: 0;
+
+            a {
+                border: 0;
+                padding: 0 0 0 60px;
+                display: block;
+
+                @media all and (min-width: 1280px){
+                    padding: 10px 0;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
 }
 
 /* mobile menu toggle button */
@@ -156,7 +211,7 @@ nav.primary {
     box-sizing: border-box;
     order: 4;
 
-    @media all and (min-width: 1280px){
+    @media all and (min-width: 1280px) {
         display: none;
     }
 
@@ -228,11 +283,11 @@ nav.primary {
     position: absolute;
     bottom: -50px;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     text-align: center;
     padding: 14px 0px;
 
-    @media all and (min-width: 1280px){
+    @media all and (min-width: 1280px) {
         width: 320px;
         flex-direction: column;
         position: static;
@@ -246,7 +301,7 @@ nav.primary {
         text-decoration: none;
         margin-left: 15px;
 
-        @media all and (min-width: 1280px){
+        @media all and (min-width: 1280px) {
             margin-left: 0;
         }
     }
