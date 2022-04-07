@@ -27,3 +27,79 @@
         text-decoration: none;
     }
 }
+
+.subpage .page-content{
+    .section-content{
+        text-align: left;
+        max-width: 980px;
+    }
+
+    .section-icon{
+        width: 250px;
+        height: 85px;
+        margin: 0 auto 40px;
+        background: #0f0d1d;
+        padding: 20px;
+        border-radius: 100px;
+
+        &.foundation{
+            .hook{
+                transform: translateY(0);
+                transition: all .33s ease-in-out;
+            }
+            &:hover,
+            &:focus{
+                .hook{
+                    transform: translateY(50px);
+                }
+            }
+        }
+    }
+
+
+    figure {
+        margin: 0 0 40px 0;
+        max-width: 100%;
+        position: relative;
+
+        &::after,
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 35%;
+            height: 50%;
+            background: #3c72fc;
+            top: -10px;
+            left: -10px;
+            z-index: -1;
+        }
+
+        &::after{
+            top: auto;
+            left: auto;
+            right: -10px;
+            bottom: -5px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    p{
+        font-size: 18px;
+        line-height: 1.75rem;
+        
+        &.large-text{
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+        }
+    }
+
+    h2{
+        font-size: 36px;
+        text-align: left;
+        margin: 20px 0 5px;
+    }
+}
