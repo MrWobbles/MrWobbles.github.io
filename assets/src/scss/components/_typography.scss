@@ -54,6 +54,14 @@
                 }
             }
         }
+
+        &.serve:hover,
+        &.serve:focus{
+            .heart{
+                transform-origin: center;
+                animation: heartbeat 1.5s infinite;
+            }
+        }
     }
 
 
@@ -102,4 +110,25 @@
         text-align: left;
         margin: 20px 0 5px;
     }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+      }
+      5% {
+        transform: scale(1.15);
+      }
+      10% {
+        transform: scale(1.1);
+      }
+      15% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
 }

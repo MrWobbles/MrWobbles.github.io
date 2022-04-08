@@ -33,4 +33,13 @@ $(function(){
     $('.menu-toggle').on('click', function(){
         $('body').toggleClass('nav-open');
     });
+
+    $('.serve-nav-item').on('click', function(){
+
+        var goto = $(this).data('goto');
+        console.log(goto);
+        $('html, body').animate({
+            scrollTop: $("#" + goto).offset().top - 100
+        }, 2000);
+    });
 });
