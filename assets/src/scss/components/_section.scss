@@ -30,13 +30,21 @@ section{
         background-size: cover;
 
         &.image-section{
-            display: flex;
-            flex-wrap: nowrap;
+
+            @media all and (min-width: $medium){
+                display: flex;
+                flex-wrap: nowrap;
+            }
 
             figure{
-                min-width: 500px;
+                min-width: 80%;
                 align-self: center;
-                margin: auto 0 auto 100px;
+                margin: 0 auto;
+
+                @media all and (min-width: $medium){
+                    min-width: 500px;
+                    margin: auto 0 auto 100px;
+                }
             }
 
             &.image-left{
@@ -52,6 +60,10 @@ section{
                     }
                 }
             }
+        }
+
+        &.centered{
+            text-align: center;
         }
     }
 
@@ -92,6 +104,14 @@ section{
 
         @media all and (min-width: $medium){
             font-size: 50px;
+        }
+    }
+
+    h3{
+        font-size: 18px;
+
+        @media all and (min-width: $medium){
+            font-size: 24px;
         }
     }
 

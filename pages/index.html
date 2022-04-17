@@ -1,65 +1,10 @@
 <!DOCTYPE html>
-
-<head>
-    <title>Calvary Baptist Church - Tallula, IL</title>
-    <link rel="stylesheet" href="/assets/dist/css/main.css" />
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-
+@include('../partials/head.html')
 <body>
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
+   
+    @include('../partials/messenger.html')
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "100949772463870");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v13.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <header>
-        <a class="logo">
-            <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
-        </a>
-
-        @@include('./partials/navigation.html')
-
-        <div class="quick-contact">
-            <div class="qc-text">
-                Don't know where to start?
-            </div>
-            <a class="qc-link" href="tel:12176919965">+1 217 691 9965</a>
-        </div>
-    </header>
+    @include('../partials/header.html')
 
     <div class="page-banner">
         <div class="page-banner-content">
@@ -78,21 +23,15 @@
                     <div class="details">
                         <h2>Along<br />the Path</h2>
                         <p class="callout-text">These our our Sunday messages for life's journey. Join us at 11am each
-                            week as we aim to walk worthy of the calling.<span class="scripture-reference">Eph
-                                4:1</span></p>
+                            week as we aim to walk worthy of the calling.<span class="scripture-reference">Eph 4:1</span></p>
                         <p>Have any questions? Message us on <a href="tel:217-691-1165">Facebook Messenger</a></p>
-
                     </div>
                     <div class="link-images">
                         <figure class="main-image"><img
-                                src="/assets/dist/images/jordan-graff-5wO3ukypCsY-unsplash.jpg" /></figure>
+                                src="/assets/dist/images/sanctuary.png" /></figure>
                         <figure class="sub-image">
                             <div class="video-embed">
-                                <iframe width="560" height="315"
-                                    src="https://www.youtube-nocookie.com/embed/-cT4mClVFMU?controls=0"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wa3ksCQQp6k?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </figure>
                     </div>
@@ -163,7 +102,7 @@
                             <h4>Foundations</h4>
                             <p>Our children's ministry Foundations is designed for learning to run the race in our modern world. 
                                 It focuses on attributes a Christian should have by looking at examples of believers in God found 
-                                in scripture and reinforces with memory verses and concise answers to relèvent questions. 
+                                in scripture and reinforces with memory verses and concise answers to relevent questions. 
                                 It rounds out by teaching life skills that are frequently lacking in today's culture.</p>
                         </div>
                     </div>
@@ -219,65 +158,7 @@
         </section>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="contact">
-                <div>
-                    <figure class="logo">
-                        <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
-                    </figure>
-                    <address>
-                        104 S. Yates<br />
-                        Tallula, IL 62688
-                    </address>
-                    <a href="tel:12176919965">+1 217 691 9965</a>
-                    <a href="mailto:shadowoftheharvest@gmail.com">shadowoftheharvest@gmail.com</a>
-                </div>
-                <div class="newsletter-signup">
-                    <!-- Begin Mailchimp Signup Form -->
-                    <div id="mc_embed_signup">
-                        <form
-                            action="https://church.us14.list-manage.com/subscribe/post?u=83fbcbf94aa6baed0ecf434fc&amp;id=264a04d6f9"
-                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                            class="validate" target="_blank" novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <h2>Subscribe for the latest news and announcements</h2>
-                                <div class="mc-field-group">
-                                    <label for="mce-EMAIL">Email Address</label>
-                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                                </div>
-                                <div id="mce-responses" class="clear foot">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>
-                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                    <input type="text" name="b_83fbcbf94aa6baed0ecf434fc_264a04d6f9" tabindex="-1"
-                                        value="">
-                                </div>
-                                <div class="optionalParent">
-                                    <div class="clear foot">
-                                        <input type="submit" value="Subscribe" name="subscribe"
-                                            id="mc-embedded-subscribe" class="button">
-                                        <p class="brandingLogo"><a href="http://eepurl.com/hX2D2T"><img
-                                                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_light_dtp.svg"></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!--End mc_embed_signup-->
-                </div>
-                <hr />
-                <p>Now then we are ambassadors for Christ, as though God did beseech you by us; we pray you in Christ's
-                    stead, be ye reconciled to God. <a
-                        href="https://www.biblegateway.com/passage/?search=2+Corinthians+5%3A20&version=KJV"
-                        target="_blank" class="scrip-address">2 Corinthians 5:20</a></p>
-
-            </div>
-        </div>
-    </footer>
+    @include('../partials/footer.html')
 
     <!-- TODO: Remove jQuery from project -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

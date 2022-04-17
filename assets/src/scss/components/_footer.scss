@@ -2,6 +2,7 @@ footer {
     background: #2c353c;
     color: #fff;
     padding-bottom: 150px;
+    position: relative;
 
     .footer-content {
         @include width-restrict;
@@ -48,6 +49,31 @@ footer {
             margin: 60px 0;
         }
     }
+
+    .attribution {
+        background: #000;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        padding: 10px 0;
+        text-align: center;
+        
+        a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: lowercase;
+        }
+    }
+
+    .copyright{
+        text-align: center;
+        white-space: nowrap;
+        margin: 60px auto 0;
+        min-width: 100%;
+    }
 }
 
 .newsletter-signup {
@@ -66,7 +92,7 @@ footer {
         padding: 0;
         position: relative;
 
-        @media all and (min-width: $medium){
+        @media all and (min-width: $medium) {
             margin-left: 60px;
         }
 

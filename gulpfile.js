@@ -127,7 +127,7 @@ function minifyImages(cb) {
 function fileInclude(cb){
   src(['./pages/**/*.html'])
     .pipe(fileinclude({
-      prefix: '@@',
+      prefix: '@',
       basepath: '@file'
     }))
     .pipe(dest('./'));
@@ -138,8 +138,8 @@ function fileInclude(cb){
 
 // Site Functions
 function watchToBuild() {
-  watch(paths.src + '/**/*', series(buildScripts, buildThemeStyles, minifyImages));
+  watch([paths.src + '/**/*', './pages/'], series(buildScripts, buildThemeStyles, fileInclude));
 }
 
-exports.default = series(buildScripts, buildThemeStyles, minifyImages, watchToBuild);
+exports.default = series(minifyImages, buildScripts, buildThemeStyles, fileInclude, watchToBuild);
 exports.fileInclude = series(fileInclude);

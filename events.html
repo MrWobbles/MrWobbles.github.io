@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Events - Tallula Calvary Baptist Church</title>
+    <title>Contact - Tallula Calvary Baptist Church</title>
     <link rel="stylesheet" href="/assets/dist/css/main.css"/>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -11,75 +11,84 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://kit.fontawesome.com/1e9972258b.js" crossorigin="anonymous"></script>
 </head>
-<body><!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
+<body>
+   
+     <!-- Messenger Chat Plugin Code -->
+ <div id="fb-root"></div>
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+ <!-- Your Chat Plugin code -->
+ <div id="fb-customer-chat" class="fb-customerchat">
+ </div>
 
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "247044038571");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+ <script>
+   var chatbox = document.getElementById('fb-customer-chat');
+   chatbox.setAttribute("page_id", "247044038571");
+   chatbox.setAttribute("attribution", "biz_inbox");
+ </script>
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v13.0'
-        });
-      };
+ <!-- Your SDK code -->
+ <script>
+   window.fbAsyncInit = function() {
+     FB.init({
+       xfbml            : true,
+       version          : 'v13.0'
+     });
+   };
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+   (function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+ </script>
+
     <header>
-        <a class="logo">
-            <img src="/assets/dist/images/Calvary-Logo_White.png" alt=""/>
-        </a>
-        
-        <nav class="primary">
-    <div class="menu-toggle">
-        <span></span>
-    </div>
+    <a href="/" class="logo">
+        <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
+    </a>
 
-    <ul class="navigation">
-        <li><a href="/" class="nav-item home">Home</a></li>
-        <li><a href="/sermons" class="nav-item sermons">Sermons</a></li>
-        <li><a href="/events" class="nav-item events">Events</a></li>
-        <li><span class="nav-item ministries">Ministries</span>
-            <ul class="subnav">
-                <li><a href="/ministries/foundations">Foundations</a></li>
-                <li><a href="/ministries/relevant-belief">Relevant Belief</a></li>
-            </ul>
-        </li>
-        <li><a href="/serve" class="nav-item serve">Serve</a></li>
-        <li><a href="/contact" class="nav-item contact">Contact</a></li>
-    </ul>
-
-    <ul class="social-media">
-        <li><a class="facebook" href="#"><span class="sr-only">Facebook</span></a></li>
-        <li><a class="youtube" href="#"><span class="sr-only">Youtube</span></a></li>
-    </ul>
-</nav>
-
-        <div class="quick-contact">
-            <div class="qc-text">
-                Don't know where to start?
-            </div>
-            <a class="qc-link" href="tel:12176919965">+1 217 691 9965</a>
+    <nav class="primary">
+        <div class="menu-toggle">
+            <span></span>
         </div>
-    </header>
+
+        <ul class="navigation">
+            <li><a href="/sermons" class="nav-item sermons">Sermons</a></li>
+            <li><a href="/our-beliefs" class="nav-item events">Our Beliefs</a></li>
+            <!-- <li><a href="/events" class="nav-item events">Events</a></li> -->
+            <li><span class="nav-item ministries">Ministries</span>
+                <ul class="subnav">
+                    <li><a href="/ministries/foundations">Foundations</a></li>
+                    <li><a href="/ministries/youth">Youth</a></li>
+                </ul>
+            </li>
+            <li><span class="nav-item get-involved">Get Involved</span>
+                <ul class="subnav">
+                    <li><a href="/serve" class="serve">Serve</a></li>
+                    <li><a href="/contact" class="contact">Contact</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="social-media">
+            <li><a class="facebook" href="https://www.facebook.com/Calvary-Baptist-Church-100949772463870/"><span
+                        class="sr-only">Facebook</span></a></li>
+            <li><a class="youtube" href="https://www.youtube.com/channel/UCrBzVtpSDbvIPxqADYuFXiA"><span
+                        class="sr-only">Youtube</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="quick-contact">
+        <div class="qc-text">
+            Don't know where to start?
+        </div>
+        <a class="qc-link" href="tel:12176919965">+1 217 691 9965</a>
+    </div>
+</header>
 
     <div class="subpage-banner">
         <h1>Events</h1>
@@ -87,8 +96,8 @@
     <div class="page-content">
         <!-- Events -->
         <section aria-label="Events" class="events light-section">
-            <div class="section-content">
-                <!-- Events Content -->
+            <div class="section-content centered">
+                <div class="fb-page" data-href="https://www.facebook.com/Calvary-Baptist-Church-100949772463870/" data-tabs="timeline" data-width="500" data-height="750" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Calvary-Baptist-Church-100949772463870/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Calvary-Baptist-Church-100949772463870/">Calvary Baptist Church</a></blockquote></div>
             </div>
         </section>
         
@@ -104,53 +113,70 @@
     </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="contact">
-                <div>
-                    <figure class="logo">
-                        <img src="/assets/dist/images/Calvary-Logo_White.png" alt=""/>
-                    </figure>
-                    <address>
-                        104 S. Yates<br/>
-                        Tallula, IL 62688
-                    </address>
-                    <a href="tel:12176919965">+1 217 691 9965</a>
-                    <a href="mailto:shadowoftheharvest@gmail.com">shadowoftheharvest@gmail.com</a>
-                </div>
-                <div class="newsletter-signup">
-                    <!-- Begin Mailchimp Signup Form -->
-                    <div id="mc_embed_signup">
-                        <form action="https://church.us14.list-manage.com/subscribe/post?u=83fbcbf94aa6baed0ecf434fc&amp;id=264a04d6f9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <h2>Subscribe for the latest news and announcements</h2>
-                                <div class="mc-field-group">
-                                    <label for="mce-EMAIL">Email Address</label>
-                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                                </div>
-                                <div id="mce-responses" class="clear foot">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                    <input type="text" name="b_83fbcbf94aa6baed0ecf434fc_264a04d6f9" tabindex="-1" value="">
-                                </div>
-                                <div class="optionalParent">
-                                    <div class="clear foot">
-                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                        <p class="brandingLogo"><a href="http://eepurl.com/hX2D2T"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_light_dtp.svg"></a></p>
-                                    </div>
+    <div class="footer-content">
+        <div class="contact">
+            <div>
+                <figure class="logo">
+                    <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
+                </figure>
+                <address>
+                    104 S. Yates<br />
+                    Tallula, IL 62688
+                </address>
+                <a href="tel:12176919965">+1 217 691 9965</a>
+                <a href="mailto:shadowoftheharvest@gmail.com">shadowoftheharvest@gmail.com</a>
+            </div>
+            <div class="newsletter-signup">
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://church.us14.list-manage.com/subscribe/post?u=83fbcbf94aa6baed0ecf434fc&amp;id=264a04d6f9"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <h2>Subscribe for the latest news and announcements</h2>
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL">Email Address</label>
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                            </div>
+                            <div id="mce-responses" class="clear foot">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_83fbcbf94aa6baed0ecf434fc_264a04d6f9" tabindex="-1" value="">
+                            </div>
+                            <div class="optionalParent">
+                                <div class="clear foot">
+                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                                        class="button">
+                                    <p class="brandingLogo"><a href="http://eepurl.com/hX2D2T"><img
+                                                src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_light_dtp.svg"></a>
+                                    </p>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                    <!--End mc_embed_signup-->
+                        </div>
+                    </form>
                 </div>
-  <hr/>
-                <p>Now then we are ambassadors for Christ, as though God did beseech you by us; we pray you in Christ's stead, be ye reconciled to God. <a href="https://www.biblegateway.com/passage/?search=2+Corinthians+5%3A20&version=KJV" target="_blank" class="scrip-address">2 Corinthians 5:20</a></p>
-              
+                <!--End mc_embed_signup-->
             </div>
+            <div class="copyright">
+                &copy; 2022 - Calvary Baptist Church of Tallula, IL
+            </div>
+            <hr />
+            <p>Now then we are ambassadors for Christ, as though God did beseech you by us; we pray you in Christ's
+                stead, be ye reconciled to God. <a
+                    href="https://www.biblegateway.com/passage/?search=2+Corinthians+5%3A20&version=KJV" target="_blank"
+                    class="scrip-address">2 Corinthians 5:20</a></p>
+
         </div>
-    </footer>
+        <div class="thanks attribution">
+            <a href="https://www.flaticon.com/free-icons/pray" target="_blank" title="pray icons">Pray icons created by
+                Freepik - Flaticon</a>
+        </div>
+    </div>
+</footer>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>

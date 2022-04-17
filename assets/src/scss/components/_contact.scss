@@ -1,0 +1,66 @@
+.map-section {
+    padding: 0;
+}
+
+.contact .section-content {
+    @media all and (min-width: $medium) {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-avenues {
+        width: 100vw;
+        min-width: 0;
+        margin: 0 auto;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media all and (min-width: $medium) {
+            width: 45%;
+            min-width: 400px;
+            position: static;
+            transform: none;
+        }
+
+        span[class*='fa'] {
+            width: 25px;
+            text-align: center;
+        }
+
+        ul {
+            background: #f2f2f2;
+            padding: 20px 15px;
+            border: 2px solid #dedede;
+            margin: 0;
+            border-right: 0;
+            border-left: 0;
+
+            @media all and (min-width: $medium) {
+                margin-left: 50px;
+                border: 2px solid #dedede;
+                border-radius: 10px;
+            }
+        }
+
+        li {
+            &:before {
+                content: none;
+            }
+        }
+    }
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 500px;
+    width: 100%;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 100%;
+}

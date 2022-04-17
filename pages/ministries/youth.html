@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>Ministries - Tallula Calvary Baptist Church</title>
+    <link rel="stylesheet" href="/assets/dist/css/main.css"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body class="subpage"><!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "247044038571");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v13.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
+    @include('../../partials/header.html')
+
+    <div class="subpage-banner">
+        <h1>Youth Ministry</h1>
+    </div>
+    <div class="page-content">
+        <section aria-label="Youth Ministry" class="ministries light-section">
+            <div class="section-content">
+              <h2>Raising Up Empowered Believers</h2>
+              <p>Acknowledging teenagers or youth is a fairly new idea. In scripture and many other cultures, they are treated as adults in training. The removal of responsibility has not done justice for this age group. Therefore, we are not aiming to entertain old kids, but to raise up young leaders. We want equipped and empowered believers able to defend their faith and edify the body of Christ.</p>
+            </div>
+        </section>
+
+        <section aria-label="Youth Ministry" class="ministries">
+            <div class="section-content">
+              <h2>Equipped Defenders</h2>
+              <p>Our youth program is designed to address common issues as well as scriptural truths to equip believers. We have studied through the Armor of God, the lineage of Christ, and modern hot topics. Our goal in all of it has been to better understand how God works and how we can participate in His plan.</p>
+            </div>
+        </section>
+        
+        <!-- //Call to Action -->
+        <section class="callout-section">
+            <div class="section-content">
+                <h2>We invite you to<br>serve Christ in love.</h2>
+                <a class="btn btn-secondary" href="#">
+                    Let's Get Started
+                </a>
+            </div>
+        </section>
+    </div>
+
+    @include('../../partials/footer.html')
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
+    <script type="text/javascript" src="/assets/dist/js/main.js"></script>
+</body>

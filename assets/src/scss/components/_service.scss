@@ -43,6 +43,15 @@
         }
     }
 
+    h2{
+        .subhead{
+            font-style: italic;
+            font-size: 24px;
+            display: block;
+            text-align: left;
+        }
+    }
+
     .searching {
         padding-top: 185px;
         padding-bottom: 200px;
@@ -64,8 +73,11 @@
             li {
                 margin: 0 0 40px 0;
                 padding: 0;
-                display: flex;
-                align-items: center;
+
+                @media all and (min-width: $medium){
+                    display: flex;
+                    align-items: center;
+                }
 
                 &:hover,
                 &:focus {
@@ -79,10 +91,14 @@
                     max-width: 100px;
                     padding: 20px;
                     border-radius: 150px;
-                    margin: 0 50px 0 0;
+                    margin: 0 auto 20px auto;
 
                     background: #f2f2f2;
                     transition: all 0.33s ease-in-out;
+                    @media all and (min-width: $medium){
+                        margin: 0 50px 0 0;
+
+                    }
                 }
 
                 &:before {

@@ -1,0 +1,110 @@
+.trinity-layout {
+    @media all and (min-width: $medium) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tile {
+        padding: 40px;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        transition: all 0.5s ease-in-out;
+
+        @media all and (min-width: $medium) {
+            width: 50%;
+        }
+
+        &:hover,
+        &:focus {
+            background: #f2f2f2;
+
+            h3,
+            p {
+                color: #222;
+            }
+        }
+
+        &.the-father {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: -2px;
+            box-sizing: border-box;
+
+            @media all and (min-width: $medium){
+                box-sizing: content-box;
+            }
+
+            &:hover,
+            &:focus {
+                .trinity-icon {
+                    background: #d4af37;
+                }
+            }
+        }
+        &.the-son {
+            box-sizing: border-box;
+            border-radius: 0;
+
+            @media all and (min-width: $medium){
+                border-bottom-left-radius: 15px;
+                border-top-left-radius: 15px;    
+                margin-right: -1px;
+            }
+
+            &:hover,
+            &:focus {
+                .trinity-icon {
+                    background: #8a0303;
+                }
+            }
+        }
+        &.holy-spirit {
+            box-sizing: border-box;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            
+            @media all and (min-width: $medium){
+                border-bottom-left-radius: 0;  
+                border-top-right-radius: 15px;
+                margin-left: -1px;
+            }
+
+            &:hover,
+            &:focus {
+                .trinity-icon {
+                    background: #fff;
+                }
+            }
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .trinity-icon {
+            width: 100px;
+            height: 100px;
+            background: #f2f2f2;
+            border-radius: 50%;
+            padding: 30px;
+            margin: 30px auto;
+            transition: all 0.5s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+section.light-section.salvation {
+    background: #fff url(/assets/dist/images/wings.png) no-repeat center;
+    background-size: 130%;
+
+    @media all and (min-width: $medium){
+        background-position: center bottom;
+    }
+}
