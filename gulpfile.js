@@ -141,5 +141,5 @@ function watchToBuild() {
   watch([paths.src + '/**/*', './pages/'], series(buildScripts, buildThemeStyles, fileInclude));
 }
 
-exports.default = series(minifyImages, buildScripts, buildThemeStyles, fileInclude);
+exports.default = series(minifyImages, buildScripts, buildThemeStyles, fileInclude, watchToBuild);
 exports.fileInclude = series(fileInclude);

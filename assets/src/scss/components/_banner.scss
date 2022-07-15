@@ -8,7 +8,7 @@
     background: transparent;
     height: calc(100vh - var(--nav-height));
     padding-top: var(--nav-height);
-    background: #0f0d1d url('/assets/dist/images/zoomerang-header-1.jpeg') no-repeat center top;
+    background: #0f0d1d url('/assets/dist/images/banner-background.png') no-repeat 100% top;
     background-size: cover;
 
     .page-banner-content {
@@ -24,7 +24,7 @@
         letter-spacing: -0.002rem;
         text-transform: uppercase;
         color: #fff;
-        width: 0;
+        width: 100%;
         margin: 0;
         font-size: 50px;
         text-indent: 10px;
@@ -34,31 +34,17 @@
         @media all and (min-width: $medium) {
             font-size: 90px;
             text-indent: 17px;
-            text-align: center;
+            text-align: left;
         }
     }
 
-    img{
-        width: auto;
-        height: auto;
-        margin: 50px auto 0;
-        max-width: 100%;
-    }
-
-    .btn.btn-primary {
-        margin: 40px auto 50px;
+    .btn {
+        margin: 40px auto;
         align-self: flex-start;
-        background: #222;
-        transform: scale(1.5);
 
-        &:focus,
-        &:hover{
-            background: #fff;
+        @media all and (min-width: $medium) {
+            margin-left: 0;
         }
-
-        // @media all and (min-width: $medium) {
-        //     margin-left: 0;
-        // }
     }
 }
 
