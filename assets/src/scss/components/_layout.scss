@@ -1,5 +1,4 @@
 html, body {
-    height: 100%;
     min-height: 100%;
     background: #0f0d1d;
     margin: 0;
@@ -7,4 +6,9 @@ html, body {
     font-family: 'Jost', sans-serif;
     position: relative;
     z-index: -1;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
 }

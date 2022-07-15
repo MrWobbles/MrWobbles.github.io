@@ -1,3 +1,7 @@
+:root{
+    --nav-color: #222;
+}
+
 body.nav-open {
     overflow: hidden;
 }
@@ -21,10 +25,10 @@ nav.primary {
         }
 
         &.navigation {
-            position: fixed;
+            position: absolute;
             padding: 0;
             width: 100vw;
-            height: calc(100vh - 150px);
+            min-height: calc(100vh - 150px);
             background: rgba(0, 0, 0, 0.9);
             left: 100%;
             top: 115px;
@@ -88,7 +92,7 @@ nav.primary {
                 &::after {
                     position: absolute;
                     height: 2px;
-                    background: #fff;
+                    background: #222;
                     width: 0;
                     bottom: -5px;
                     left: 0;
@@ -139,10 +143,12 @@ nav.primary {
 
             a.facebook {
                 background-image: url('/assets/dist/images/facebook.png');
+                filter: brightness(10%);
             }
 
             a.youtube {
                 background-image: url('/assets/dist/images/youtube-brands.svg');
+                filter: brightness(10%);
             }
         }
     }
@@ -152,12 +158,20 @@ nav.primary {
         font-size: 18px;
         line-height: 115px;
         margin-right: 30px;
+
+        @media all and (min-width: $medium){
+            color: var(--nav-color);
+        }
     }
 
     a {
         color: #fff;
         text-decoration: none;
         position: relative;
+
+        @media all and (min-width: $medium){
+            color: var(--nav-color);
+        }
     }
 
     ul.subnav {
@@ -183,13 +197,14 @@ nav.primary {
             height: auto;
             min-height: 0;
             line-height: 2.75rem;
-            background: #000;
+            // background: #000;
             border: 0;
 
             a {
                 border: 0;
                 padding: 0 0 0 60px;
                 display: block;
+                color: #fff;
 
                 @media all and (min-width: 1280px){
                     padding: 10px 0;
@@ -224,7 +239,7 @@ nav.primary {
         transition: background-color 0.3s;
         width: 40px;
         height: 6px;
-        background-color: #fff;
+        background-color: var(--nav-color);
         display: block;
         opacity: 1;
 
@@ -234,7 +249,7 @@ nav.primary {
             content: '';
             width: 40px;
             height: 6px;
-            background-color: #fff;
+            background-color: var(--nav-color);
             display: block;
             opacity: 1;
         }
@@ -278,7 +293,7 @@ nav.primary {
     font-size: 14px;
     display: flex;
     justify-content: center;
-    color: #e7e7e7;
+    color: var(--nav-color);
 
     position: absolute;
     bottom: -50px;
@@ -297,7 +312,7 @@ nav.primary {
     }
 
     a {
-        color: #fff;
+        color: var(--nav-color);
         text-decoration: none;
         margin-left: 15px;
 
@@ -308,6 +323,6 @@ nav.primary {
 }
 
 .qc-text {
-    color: #fff;
+    color: var(--nav-color);
     opacity: 0.8;
 }
