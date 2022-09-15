@@ -54,7 +54,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
  </script>
-
+    
     <header>
     <a href="/" class="logo">
         <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
@@ -105,18 +105,63 @@
 </header>
 
     <div class="subpage-banner">
-        <h1>Sermons</h1>
+        <h1>Bible Study</h1>
     </div>
+
     <div class="page-content">
-        <!-- Sermons - We're Leading in the Market -->
-        <section aria-label="Sermons" class="sermons light-section">
+
+        <!-- //Hermeneutics -->
+        <section class="study-section light-section">
             <div class="section-content">
-                <div class="sermons-container">
-                    <!-- Sermon Listings -->
-                </div>
-                <p class="large-text" style="text-align: center;font-size: 21px;margin: 40px auto;">
-                    Check out the rest of our sermons on our <a href="https://www.youtube.com/playlist?list=PL23G4Gbl2vruJz_uv7pjvkMg5wkAFv8ZP" target="_blank">Youtube channel</a>
-                </p>
+                <h1>Hermeneutics</h1>
+
+                <p>2 Timothy 2:15</p>
+
+                <p>Hermeneutics is just a fancy way to say "How to study Scripture".  
+                    We have compiled a few resources to aid in that goal below, things like an online concordance, 
+                    word studies and helpful places to read and study the Bible.</p>
+            </div>
+        </section>
+
+        <!-- //Online Bibles -->
+        <section aria-label="Faith" class="what-we-believe gray-section">
+            <div class="section-content">
+                <h2>Online Bibles</h2>
+                <p>Here is a list of Bibles online, with some strengths and weaknesses:</p>
+                <ul class="concordance-list">
+                    <li><a href="#">Bible 1</a></li>
+                    <li><a href="#">Bible 2</a></li>
+                    <li><a href="#">Bible 3</a></li>
+                    <li><a href="#">Bible 4</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- //Concordances -->
+        <section aria-label="Faith" class="what-we-believe gray-section">
+            <div class="section-content">
+                <h2>Concordances</h2>
+                <p>This is what a concordance is, here is a list of them that could be useful:</p>
+                <ul class="concordance-list">
+                    <li><a href="#">Concordance 1</a></li>
+                    <li><a href="#">Concordance 2</a></li>
+                    <li><a href="#">Concordance 3</a></li>
+                    <li><a href="#">Concordance 4</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- //Word Studies -->
+        <section aria-label="Faith" class="what-we-believe gray-section">
+            <div class="section-content">
+                <h2>Word Studies</h2>
+                <p>This is what a word study is, here is a list of them that could be useful:</p>
+                <ul class="word-study-list">
+                    <li><a href="#">Word Study 1</a></li>
+                    <li><a href="#">Word Study 2</a></li>
+                    <li><a href="#">Word Study 3</a></li>
+                    <li><a href="#">Word Study 4</a></li>
+                </ul>
             </div>
         </section>
 
@@ -130,7 +175,7 @@
             </div>
         </section>
     </div>
-
+    
     <footer>
     <div class="footer-content">
         <div class="contact">
@@ -197,54 +242,7 @@
     </div>
 </footer>
     
-    <!-- TODO: Remove jQuery from project -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
     <script type="text/javascript" src="/assets/dist/js/main.js"></script>
-    
-    <script>
-        function loadPlaylist() {
-            gapi.client.setApiKey('AIzaSyD-GXx_0j-cGkmnntRsz_Hk6Ye_RXI-6kE');
-            gapi.client.load('youtube', 'v3', function () {
-
-                var request = gapi.client.youtube.search.list({
-                    "part": [
-                        "snippet"
-                    ],
-                    "channelId": "UCrBzVtpSDbvIPxqADYuFXiA",
-                    "maxResults": 12,
-                    "order": "date",
-                    "q": "sermon"
-                });
-
-                var sermonElements = document.querySelectorAll('.sermons-container');
-
-                request.execute(function (response) {
-                    for (var i = 0; i < response.items.length; i++) {
-
-                        var link = "https://www.youtube.com/watch?v=" + response.items[i].id.videoId;
-                        var title = response.items[i].snippet.title;
-                        var desc = response.items[i].snippet.description;
-                        var datePublished = new Date(response.items[i].snippet.publishedAt);
-                        var date = (datePublished.getMonth() + 1) + "/" + datePublished.getDate();
-
-                        var sermonHtml = `<span class="date">${date}</span>
-                            <h3>${title}</h3>
-                            <p>${desc}</p>`
-
-                        var sermonItem = document.createElement('a');
-                        sermonItem.href = link;
-                        sermonItem.target = "_blank";
-                        sermonItem.class = "sermon";
-                        sermonItem.innerHTML = sermonHtml;
-
-                        sermonElements[0].appendChild(sermonItem);
-                    }
-                });
-            });
-        }
-    </script>
-    <script src="https://apis.google.com/js/client.js?onload=loadPlaylist"></script>
-
 </body>
