@@ -1,86 +1,88 @@
 <!DOCTYPE html>
 @include('../../partials/head.html')
+
 <body>
-   
-    @include('../../partials/messenger.html')
-    
-    @include('../../partials/header.html')
 
-    <div class="subpage-banner">
-        <h1>Bible Study</h1>
-    </div>
+  @include('../../partials/messenger.html')
 
-    <div class="page-content">
+  @include('../../partials/header.html')
 
-        <!-- //Hermeneutics -->
-        <section class="study-section light-section">
-            <div class="section-content">
-                <h1>Hermeneutics</h1>
+  <div class="subpage-banner">
+    <h1>Bible Study</h1>
+  </div>
 
-                <p>2 Timothy 2:15</p>
+  <div class="page-content">
 
-                <p>Hermeneutics is just a fancy way to say "How to study Scripture".  
-                    We have compiled a few resources to aid in that goal below, things like an online concordance, 
-                    word studies and helpful places to read and study the Bible.</p>
-            </div>
-        </section>
+    <!-- //Hermeneutics -->
+    <section class="study-section light-section">
+      <div class="section-content">
+        <h1>Hermeneutics</h1>
 
-        <!-- //Online Bibles -->
-        <section aria-label="Faith" class="what-we-believe gray-section">
-            <div class="section-content">
-                <h2>Online Bibles</h2>
-                <p>Here is a list of Bibles online, with some strengths and weaknesses:</p>
-                <ul class="concordance-list">
-                    <li><a href="#">Bible 1</a></li>
-                    <li><a href="#">Bible 2</a></li>
-                    <li><a href="#">Bible 3</a></li>
-                    <li><a href="#">Bible 4</a></li>
-                </ul>
-            </div>
-        </section>
+        <p>2 Timothy 2:15</p>
 
-        <!-- //Concordances -->
-        <section aria-label="Faith" class="what-we-believe gray-section">
-            <div class="section-content">
-                <h2>Concordances</h2>
-                <p>This is what a concordance is, here is a list of them that could be useful:</p>
-                <ul class="concordance-list">
-                    <li><a href="#">Concordance 1</a></li>
-                    <li><a href="#">Concordance 2</a></li>
-                    <li><a href="#">Concordance 3</a></li>
-                    <li><a href="#">Concordance 4</a></li>
-                </ul>
-            </div>
-        </section>
+        <p>Hermeneutics is just a fancy way to say "How to study Scripture".
+          We have compiled a few resources to aid in that goal below, things like an online concordance,
+          word studies and helpful places to read and study the Bible.</p>
+      </div>
+    </section>
 
-        <!-- //Word Studies -->
-        <section aria-label="Faith" class="what-we-believe gray-section">
-            <div class="section-content">
-                <h2>Word Studies</h2>
-                <p>This is what a word study is, here is a list of them that could be useful:</p>
-                <ul class="word-study-list">
-                    <li><a href="#">Word Study 1</a></li>
-                    <li><a href="#">Word Study 2</a></li>
-                    <li><a href="#">Word Study 3</a></li>
-                    <li><a href="#">Word Study 4</a></li>
-                </ul>
-            </div>
-        </section>
+    <!-- //Online Bibles -->
+    <section aria-label="Faith" class="what-we-believe gray-section">
+      <div class="section-content">
+        <h2>Online Bibles</h2>
+        <p>Here is a list of Bibles online, with some strengths and weaknesses:</p>
+        <ul class="concordance-list">
+          <li><a href="#">Bible 1</a></li>
+          <li><a href="#">Bible 2</a></li>
+          <li><a href="#">Bible 3</a></li>
+          <li><a href="#">Bible 4</a></li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- //Call to Action -->
-        <section class="callout-section">
-            <div class="section-content">
-                <h2>We invite you to<br>serve Christ in love.</h2>
-                <a class="btn btn-secondary" href="#">
-                    Let's Get Started
-                </a>
-            </div>
-        </section>
-    </div>
-    
-    @include('../../partials/footer.html')
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
-    <script type="text/javascript" src="/assets/dist/js/main.js"></script>
+    <!-- //Concordances -->
+    <section aria-label="Faith" class="what-we-believe gray-section">
+      <div class="section-content">
+        <h2>Concordances</h2>
+        <p>This is what a concordance is, here is a list of them that could be useful:</p>
+        <ul class="concordance-list">
+          <li><a href="#">Concordance 1</a></li>
+          <li><a href="#">Concordance 2</a></li>
+          <li><a href="#">Concordance 3</a></li>
+          <li><a href="#">Concordance 4</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- //Word Studies -->
+    <section aria-label="Faith" class="what-we-believe gray-section">
+      <div class="section-content">
+        <h2>Word Studies</h2>
+        <p>This is what a word study is, here is a list of them that could be useful:</p>
+        <ul class="word-study-list">
+          <li><a href="#">Word Study 1</a></li>
+          <li><a href="#">Word Study 2</a></li>
+          <li><a href="#">Word Study 3</a></li>
+          <li><a href="#">Word Study 4</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- //Call to Action -->
+    <section class="callout-section">
+      <div class="section-content">
+        <h2>We invite you to<br>serve Christ in love.</h2>
+        <a class="btn btn-secondary" href="/serve">
+          Let's Get Started
+        </a>
+      </div>
+    </section>
+  </div>
+
+  @include('../../partials/footer.html')
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
+  <script type="text/javascript" src="/assets/dist/js/main.js"></script>
 </body>

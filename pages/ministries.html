@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 @include('../partials/head.html')
+
 <body>
-   
-    @include('../partials/messenger.html')
-    
-    @include('../partials/header.html')
 
-    <div class="subpage-banner">
-        <h1>Ministries</h1>
-    </div>
-    <div class="page-content">
+  @include('../partials/messenger.html')
+
+  @include('../partials/header.html')
+
+  <div class="subpage-banner">
+    <h1>Ministries</h1>
+  </div>
+  <div class="page-content">
+    <!-- Ministries -->
+    <section aria-label="Ministries" class="ministries light-section">
+      <div class="section-content">
         <!-- Ministries -->
-        <section aria-label="Ministries" class="ministries light-section">
-            <div class="section-content">
-                <!-- Ministries -->
-            </div>
-        </section>
-        
-        <!-- //Call to Action -->
-        <section class="callout-section">
-            <div class="section-content">
-                <h2>We invite you to<br>serve Christ in love.</h2>
-                <a class="btn btn-secondary" href="#">
-                    Let's Get Started
-                </a>
-            </div>
-        </section>
-    </div>
+      </div>
+    </section>
 
-    @include('../partials/footer.html')
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
-    <script type="text/javascript" src="/assets/dist/js/main.js"></script>
+    <!-- //Call to Action -->
+    <section class="callout-section">
+      <div class="section-content">
+        <h2>We invite you to<br>serve Christ in love.</h2>
+        <a class="btn btn-secondary" href="/serve">
+          Let's Get Started
+        </a>
+      </div>
+    </section>
+  </div>
+
+  @include('../partials/footer.html')
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
+  <script type="text/javascript" src="/assets/dist/js/main.js"></script>
 </body>

@@ -1,85 +1,84 @@
 :root {
-    --nav-height: 165px;
+  --nav-height: 165px;
 
-    @media all and (min-width: $medium){
-        --nav-height: 115px;
-    }
+  @media all and (min-width: $medium) {
+    --nav-height: 115px;
+  }
 }
 
 .page-banner {
-    position: relative;
-    z-index: -1;
+  position: relative;
+  z-index: -1;
+  background: transparent;
+  height: calc(100vh - var(--nav-height));
+  padding-top: var(--nav-height);
+  background: #0f0d1d url("/assets/dist/images/banner-background.png") no-repeat 100% top;
+  background-position: center var(--nav-height);
+  overflow: hidden;
+
+  background-size: 125vw calc(100% - var(--nav-height));
+  @media all and (min-width: $medium) {
+    background-size: 100vw calc(100% - var(--nav-height));
+  }
+  @media all and (min-width: 2100px) {
+    background-size: 1894px calc(100% - var(--nav-height));
+  }
+
+  .page-banner-content {
+    @include width-restrict;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - var(--nav-height));
+  }
+
+  h1 {
+    @include Jost-Black;
+    letter-spacing: -0.002rem;
+    text-transform: uppercase;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    font-size: 50px;
+    text-indent: 10px;
+    line-height: 1.25em;
+
+    @media all and (min-width: $medium) {
+      font-size: 90px;
+      text-indent: 17px;
+      text-align: left;
+    }
+  }
+
+  .btn.btn-primary {
     background: transparent;
-    height: calc(100vh - var(--nav-height));
-    padding-top: var(--nav-height);
-    background: #0f0d1d url('/assets/dist/images/b2schoolbash.png') no-repeat;
-    background-position: center var(--nav-height);
-    overflow: hidden;
-
-    background-size: 125vw calc(100% - var(--nav-height));
-    @media all and (min-width: $medium){
-        background-size: 100vw calc(100% - var(--nav-height));
-    }
-    @media all and (min-width: 2100px){
-        background-size: 1894px calc(100% - var(--nav-height));
-    }
-
-    .page-banner-content {
-        @include width-restrict;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: calc(100% - var(--nav-height));
-    }
-
-    h1 {
-        @include Jost-Black;
-        letter-spacing: -0.002rem;
-        text-transform: uppercase;
-        color: #fff;
-        width: 100%;
-        margin: 0;
-        font-size: 50px;
-        text-indent: 10px;
-        text-align: center;
-        line-height: 1.25em;
-
-        @media all and (min-width: $medium) {
-            font-size: 90px;
-            text-indent: 17px;
-            text-align: left;
-        }
-    }
-
-    .btn.btn-primary {
-        background: transparent;
-        color: transparent;
-        position: absolute;
-        left: 0;
-        width: 100vw;
-        height: calc(100% - var(--nav-height));
-        top: var(--nav-height);
-        margin: 0;
-        padding: 0;
-    }
+    color: transparent;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: calc(100% - var(--nav-height));
+    top: var(--nav-height);
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .subpage-banner {
-    padding-top: 115px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    background: #0f0d1d url('/assets/dist/images/banner-background.png') no-repeat 100% bottom;
+  padding-top: 115px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  background: #0f0d1d url("/assets/dist/images/banner-background.png") no-repeat 100% bottom;
 
-    h1 {
-        @include width-restrict;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 40px;
-        text-align: center;
+  h1 {
+    @include width-restrict;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
 
-        @media all and (min-width: $medium){
-            font-size: 50px;
-        }
+    @media all and (min-width: $medium) {
+      font-size: 50px;
     }
+  }
 }
