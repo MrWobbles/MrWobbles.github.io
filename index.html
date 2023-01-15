@@ -128,7 +128,8 @@
             <h2>Along<br />the Path</h2>
             <p class="callout-text">These our our Sunday messages for life's journey. Join us at 11am each
               week as we aim to walk worthy of the calling.<span class="scripture-reference">Eph 4:1</span></p>
-            <p>Have any questions? Message us on <a href="tel:217-691-1165">Facebook Messenger</a></p>
+            <p>Have any questions? Message us on <a href="https://www.facebook.com/profile.php?id=100077434054540"
+                target="_blank">Facebook Messenger</a></p>
           </div>
           <div class="link-images">
             <figure class="main-image"><img src="/assets/dist/images/sanctuary.png" /></figure>
@@ -329,23 +330,8 @@
                   </div>
                 </div>
                 <div>
-                  <div class="sib-captcha sib-form-block">
-                    <div class="form__entry entry_block">
-                      <div class="form__label-row ">
-                        <script>
-                          function handleCaptchaResponse() {
-                            var event = new Event('captchaChange');
-                            document.getElementById('sib-captcha').dispatchEvent(event);
-                          }
-                        </script>
-                        <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha"
-                          data-sitekey="6LdN-PojAAAAACKOei_knQZLpdjrFqXPsqU76rKP" data-callback="handleCaptchaResponse">
-                        </div>
-                      </div>
-                      <label class="entry__error entry__error--primary">
-                      </label>
-                    </div>
-                  </div>
+                  <div class="g-recaptcha" data-sitekey="6LdN-PojAAAAACKOei_knQZLpdjrFqXPsqU76rKP"
+                    data-callback="invisibleCaptchaCallback" data-size="invisible" onclick="executeCaptcha"></div>
                 </div>
                 <div>
                   <div class="sib-form-block">

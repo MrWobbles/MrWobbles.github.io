@@ -221,23 +221,8 @@
                   </div>
                 </div>
                 <div>
-                  <div class="sib-captcha sib-form-block">
-                    <div class="form__entry entry_block">
-                      <div class="form__label-row ">
-                        <script>
-                          function handleCaptchaResponse() {
-                            var event = new Event('captchaChange');
-                            document.getElementById('sib-captcha').dispatchEvent(event);
-                          }
-                        </script>
-                        <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha"
-                          data-sitekey="6LdN-PojAAAAACKOei_knQZLpdjrFqXPsqU76rKP" data-callback="handleCaptchaResponse">
-                        </div>
-                      </div>
-                      <label class="entry__error entry__error--primary">
-                      </label>
-                    </div>
-                  </div>
+                  <div class="g-recaptcha" data-sitekey="6LdN-PojAAAAACKOei_knQZLpdjrFqXPsqU76rKP"
+                    data-callback="invisibleCaptchaCallback" data-size="invisible" onclick="executeCaptcha"></div>
                 </div>
                 <div>
                   <div class="sib-form-block">
