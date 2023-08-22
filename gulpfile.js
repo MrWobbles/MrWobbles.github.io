@@ -124,7 +124,7 @@ function minifyImages(cb) {
   cb();
 }
 
-function fileInclude(cb){
+function fileInclude(cb) {
   src(['./pages/**/*.html'])
     .pipe(fileinclude({
       prefix: '@',
@@ -132,7 +132,7 @@ function fileInclude(cb){
     }))
     .pipe(dest('./'));
 
-    cb();
+  cb();
 }
 
 

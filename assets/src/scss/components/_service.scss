@@ -1,110 +1,111 @@
 .page-content {
-    .serve-nav-container{
-        h2{
-            text-align: center;
-        }
+  .serve-nav-container {
+    h2 {
+      text-align: center;
     }
-    .serve-nav {
-        padding: 30px 20px 40px;
-        background: #fff;
+  }
+  .serve-nav {
+    padding: 30px 20px 40px;
+    background: #fff;
+    display: block;
+    margin: 60px auto 0;
+    width: 250px;
+    text-align: center;
+    border: 1px solid #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    list-style: none;
+
+    li {
+      button,
+      a {
         display: block;
-        margin: 60px auto 0;
-        width: 250px;
-        text-align: center;
-        border: 1px solid #f9f9f9;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        list-style: none;
+        appearance: none;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid #f9f9f9;
+        padding: 15px 0;
+        font-weight: 600;
+        background: transparent;
+        transition: all 0.33s ease-in-out;
 
-        li{
-            button{
-                appearance: none;
-                width: 100%;
-                border: 0;
-                border-bottom: 2px solid #f9f9f9;
-                padding: 15px 0;
-                font-weight: 600;
-                background: transparent;
-                transition: all .33s ease-in-out;
-
-                &:hover,
-                &:focus{
-                    cursor: pointer;
-                    background: #f9f9f9;
-                    color: #3C72FC;
-                }
-            }
-
-            &:last-child{
-                button{
-                    border-bottom: 0;
-                }
-            }
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          background: #f9f9f9;
+          color: #3c72fc;
         }
+      }
+
+      &:last-child {
+        button {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  h2 {
+    .subhead {
+      font-style: italic;
+      font-size: 24px;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .searching {
+    padding-top: 185px;
+    padding-bottom: 200px;
+    background-image: url("/assets/dist/images/wavy-lines.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 25% auto;
+  }
+  .running-the-race {
+    h3 {
+      font-size: 24px;
     }
 
-    h2{
-        .subhead{
-            font-style: italic;
-            font-size: 24px;
-            display: block;
-            text-align: left;
-        }
-    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-    .searching {
-        padding-top: 185px;
-        padding-bottom: 200px;
-        background-image: url('/assets/dist/images/wavy-lines.png');
-        background-repeat: no-repeat;
-        background-position: top left;
-        background-size: 25% auto;
-    }
-    .running-the-race {
-        h3 {
-            font-size: 24px;
+      li {
+        margin: 0 0 40px 0;
+        padding: 0;
+
+        @media all and (min-width: $medium) {
+          display: flex;
+          align-items: center;
         }
 
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            li {
-                margin: 0 0 40px 0;
-                padding: 0;
-
-                @media all and (min-width: $medium){
-                    display: flex;
-                    align-items: center;
-                }
-
-                &:hover,
-                &:focus {
-                    figure {
-                        background: #ffc30b;
-                    }
-                }
-
-                figure {
-                    min-width: 100px;
-                    max-width: 100px;
-                    padding: 20px;
-                    border-radius: 150px;
-                    margin: 0 auto 20px auto;
-
-                    background: #f2f2f2;
-                    transition: all 0.33s ease-in-out;
-                    @media all and (min-width: $medium){
-                        margin: 0 50px 0 0;
-
-                    }
-                }
-
-                &:before {
-                    content: none;
-                }
-            }
+        &:hover,
+        &:focus {
+          figure {
+            background: #ffc30b;
+          }
         }
+
+        figure {
+          min-width: 100px;
+          max-width: 100px;
+          padding: 20px;
+          border-radius: 150px;
+          margin: 0 auto 20px auto;
+
+          background: #f2f2f2;
+          transition: all 0.33s ease-in-out;
+          @media all and (min-width: $medium) {
+            margin: 0 50px 0 0;
+          }
+        }
+
+        &:before {
+          content: none;
+        }
+      }
     }
+  }
 }
