@@ -1,10 +1,52 @@
-html, body {
-    height: 100%;
-    min-height: 100%;
-    background: #0f0d1d;
-    margin: 0;
-    padding: 0;
-    font-family: 'Jost', sans-serif;
-    position: relative;
-    z-index: -1;
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  background: #0f0d1d;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  position: relative;
+  z-index: -1;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #f3c22b;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -120px;
+  z-index: 9999;
+  background: #ffffff;
+  color: #0f0d1d;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s ease-in-out;
+
+  &:focus,
+  &:focus-visible {
+    top: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

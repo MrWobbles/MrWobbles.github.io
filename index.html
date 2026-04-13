@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <meta charset="utf-8">
   <title>Tallula Calvary Baptist Church</title>
   <link rel="stylesheet" href="/assets/dist/css/main.css" />
 
@@ -25,6 +26,74 @@
 </script>
 
 <body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .vbs-section {
+      background: url('/assets/dist/images/wonderfully-made-bg.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    .vbs-section .section-content {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .vbs-section h2 {
+      margin: 0 0 30px;
+      font-size: 3em;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .vbs-section .details {
+      margin: 20px 0;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .vbs-section .details.tba {
+      font-weight: 400;
+    }
+
+    .vbs-section .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .vbs-section .btn:hover {
+      background-color: #e68900;
+    }
+
+    .vbs-section .svg-logo {
+      width: 250px;
+      height: auto;
+      margin: 20px auto;
+    }
+  </style>
 
    <!-- Messenger Chat Plugin Code -->
  <div id="fb-root"></div>
@@ -57,24 +126,27 @@
    }(document, 'script', 'facebook-jssdk'));
  </script>
 
-  <header>
-  <a href="/" class="logo">
-    <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<header>
+  <a href="/" class="logo" aria-label="Calvary Baptist Church home page">
+    <img src="/assets/dist/images/Calvary-Logo_White.png" alt="Calvary Baptist Church logo" />
   </a>
 
-  <nav class="primary">
-    <div class="menu-toggle">
+  <nav class="primary" aria-label="Primary">
+    <button class="menu-toggle" type="button" aria-label="Open main menu" aria-expanded="false">
       <span></span>
-    </div>
+    </button>
 
-    <ul class="navigation">
+    <ul class="navigation" id="primary-navigation">
       <li><a href="/sermons" class="nav-item sermons">Sermons</a></li>
       <li><a href="/our-beliefs" class="nav-item events">Our Beliefs</a></li>
       <!-- <li><a href="/events" class="nav-item events">Events</a></li> -->
-      <li><span class="nav-item ministries">Ministries</span>
+      <li class="has-subnav">
+        <button class="nav-item nav-submenu-toggle ministries" type="button" aria-expanded="false">Ministries</button>
         <ul class="subnav">
           <li><a href="/ministries/awana">AWANA</a></li>
           <li><a href="/ministries/youth">Youth</a></li>
+          <li><a href="/resources/souls-training-ground">Soul's Training Ground</a></li>
         </ul>
       </li>
       <!-- <li><span class="nav-item resources">Resources</span>
@@ -85,7 +157,9 @@
 
       <!-- <li><a href="https://tithe.ly/give?c=6399118" target="_blank" class="nav-item give">Give</a></li> -->
 
-      <li><span class="nav-item get-involved">Get Involved</span>
+      <li class="has-subnav">
+        <button class="nav-item nav-submenu-toggle get-involved" type="button" aria-expanded="false">Get
+          Involved</button>
         <ul class="subnav">
           <li><a href="/serve" class="serve">Serve</a></li>
           <li><a href="/contact" class="contact">Contact</a></li>
@@ -117,7 +191,7 @@
         Get Started
       </a>
     </div>
-    <div class="mouse" tabindex="-1"></div>
+    <div class="mouse" aria-hidden="true"></div>
   </div>
   <div class="page-content">
     <!-- Sermons - We're Leading in the Market -->
@@ -129,13 +203,14 @@
             <p class="callout-text">These our our Sunday messages for life's journey. Join us at 11am each
               week as we aim to walk worthy of the calling.<span class="scripture-reference">Eph 4:1</span></p>
             <p>Have any questions? Message us on <a href="https://www.facebook.com/profile.php?id=100077434054540"
-                target="_blank">Facebook Messenger</a></p>
+                target="_blank" rel="noopener noreferrer">Facebook Messenger</a></p>
           </div>
           <div class="link-images">
-            <figure class="main-image"><img src="/assets/dist/images/sanctuary.png" /></figure>
+            <figure class="main-image"><img src="/assets/dist/images/sanctuary.png"
+                alt="Calvary Baptist Church sanctuary" loading="lazy" /></figure>
             <figure class="sub-image">
               <div class="video-embed">
-                <img src="/assets/dist/images/maxresdefault.webp" alt="">
+                <img src="/assets/dist/images/maxresdefault.webp" alt="Recent sermon video preview" loading="lazy">
               </div>
             </figure>
           </div>
@@ -155,7 +230,22 @@
       </div>
     </section>
 
-    <!-- //Ministries - Questions Answers -->
+    <section aria-label="Wonderfully Made Vacation Bible Camp details" class="vbs-section">
+      <div class="section-content">
+        <img src="/assets/dist/images/wonderfully-made.png" alt="Wonderfully Made Vacation Bible Camp logo"
+          class="svg-logo">
+        <h2>Wonderfully Made</h2>
+        <p class="details">Vacation Bible Camp 2026</p>
+        <p class="details tba">Dates: To Be Announced</p>
+        <p class="details tba">Time: To Be Announced</p>
+        <p class="details">Calvary Baptist Church</p>
+        <a class="btn btn-secondary" href="https://form.jotform.com/261024686568162" target="_blank"
+          rel="noopener noreferrer">
+          Get Updates
+        </a>
+      </div>
+    </section>
+    <!-- //Ministries - Questions Answers
     <section class="ministries">
       <div class="section-content">
         <h2>Our Ministries</h2>
@@ -175,9 +265,9 @@
           <div class="accordion">
             <h3 class="acc-title">VBS</h3>
             <div class="acc-content">
-              <h4>Backyard Bible Camp</h4>
-              <p>We are excited to present our Backyard Bible Camp this year, which will focus on deepening our
-                understanding of scripture and learning effective evangelism techniques. Throughout the camp, children
+              <h4>Wonderfully Made Vacation Bible Camp</h4>
+              <p>We are excited to present our Wonderfully Made Vacation Bible Camp this year, with a focus on helping
+                children see who they are in Christ through Scripture, worship, and hands-on learning. Throughout camp, children
                 will engage in interactive Bible lessons, hands-on activities, and fun games, all designed to equip them
                 with the knowledge and confidence to share their faith with others.</p>
             </div>
@@ -202,7 +292,7 @@
         </div>
       </div>
     </section>
-
+-->
     <!-- //Call to Action -->
     <section class="callout-section">
       <div class="section-content">
@@ -220,7 +310,7 @@
     <div class="contact">
       <div>
         <figure class="logo">
-          <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
+          <img src="/assets/dist/images/Calvary-Logo_White.png" alt="Calvary Baptist Church logo" />
         </figure>
         <address>
           104 S. Yates<br />
@@ -269,8 +359,8 @@
                           Bulletin</label>
 
                         <div class="entry__field">
-                          <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off"
-                            placeholder="EMAIL" data-required="true" required />
+                          <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email"
+                            inputmode="email" placeholder="EMAIL" data-required="true" required />
                         </div>
                       </div>
 
@@ -311,11 +401,12 @@
       <p>Now then we are ambassadors for Christ, as though God did beseech you by us; we pray you in Christ's
         stead, be ye reconciled to God. <a
           href="https://www.biblegateway.com/passage/?search=2+Corinthians+5%3A20&version=KJV" target="_blank"
-          class="scrip-address">2 Corinthians 5:20</a></p>
+          rel="noopener noreferrer" class="scrip-address">2 Corinthians 5:20</a></p>
 
     </div>
     <div class="thanks attribution">
-      <a href="https://www.flaticon.com/free-icons/pray" target="_blank" title="pray icons">Pray icons created by
+      <a href="https://www.flaticon.com/free-icons/pray" target="_blank" rel="noopener noreferrer"
+        title="pray icons">Pray icons created by
         Freepik - Flaticon</a>
     </div>
   </div>

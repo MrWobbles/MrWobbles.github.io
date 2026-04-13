@@ -1,0 +1,237 @@
+.training-ground-page {
+  .training-intro {
+    background:
+      radial-gradient(circle at 5% 8%, rgba(212, 175, 55, 0.25), transparent 35%),
+      radial-gradient(circle at 95% 90%, rgba(37, 92, 128, 0.2), transparent 40%), #fcfcfb;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 20px;
+      color: #0f0d1d;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    p {
+      color: #222;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.65;
+    }
+
+    .scripture-passage {
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      margin-bottom: 18px;
+    }
+  }
+
+  .training-controls-section {
+    padding: 70px 0;
+  }
+
+  .training-controls-shell {
+    display: grid;
+    gap: 20px;
+
+    @media all and (min-width: $medium) {
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      align-items: end;
+    }
+  }
+
+  .filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &.goal-filter,
+    &.search-filter {
+      display: block;
+    }
+  }
+
+  .filter-label {
+    width: 100%;
+    @include Jost-Black;
+    color: #0f0d1d;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+  }
+
+  .nature-filter button,
+  .goal-filter select,
+  .search-filter input {
+    border: 1px solid #ced4dc;
+    border-radius: 999px;
+    background: #fff;
+    color: #0f0d1d;
+    font-size: 14px;
+  }
+
+  .nature-filter button {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+
+    &.is-active,
+    &:hover,
+    &:focus {
+      background: #0f0d1d;
+      border-color: #0f0d1d;
+      color: #fff;
+    }
+  }
+
+  .goal-filter select,
+  .search-filter input {
+    width: 100%;
+    padding: 12px 16px;
+    min-height: 46px;
+  }
+
+  .training-result-count {
+    margin: 18px 0 0;
+    color: #4a5563;
+    font-size: 15px;
+  }
+
+  .discipline-category {
+    margin: 0 0 70px;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  .category-focus {
+    margin: 8px 0 26px;
+    color: #4a5563;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    line-height: 1.6;
+    font-weight: 700;
+  }
+
+  .discipline-grid {
+    display: grid;
+    gap: 20px;
+
+    @media all and (min-width: $small) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .discipline-card {
+    border: 1px solid #e1e7ee;
+    border-radius: 18px;
+    padding: 24px;
+    background: linear-gradient(140deg, rgba(15, 13, 29, 0.03), transparent 40%), #fff;
+    box-shadow: 0 16px 40px -30px rgba(15, 13, 29, 0.8);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 42px -34px rgba(15, 13, 29, 0.95);
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+
+    h3 {
+      font-size: 26px;
+      line-height: 1.2;
+      margin: 0;
+      color: #0f0d1d;
+    }
+
+    .discipline-scripture {
+      font-size: 16px;
+      color: #354051;
+      margin: 16px 0;
+      font-weight: 600;
+
+      a {
+        color: #24547a;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 12px;
+        color: #1f2933;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .discipline-heading {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .discipline-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 12px;
+    background: #f4f8fb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: #24547a;
+    }
+  }
+
+  .training-empty-state {
+    text-align: center;
+    padding: 35px;
+    border: 1px dashed #b8c5d4;
+    border-radius: 14px;
+    background: #fafcfe;
+
+    h3 {
+      color: #0f0d1d;
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    p {
+      color: #4a5563;
+      margin: 0;
+    }
+  }
+
+  .training-note {
+    text-align: center;
+
+    h2,
+    p {
+      color: #0f0d1d;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+
+    p {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+      line-height: 1.7;
+    }
+  }
+}

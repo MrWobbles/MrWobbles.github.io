@@ -48,24 +48,27 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <header>
-  <a href="/" class="logo">
-    <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<header>
+  <a href="/" class="logo" aria-label="Calvary Baptist Church home page">
+    <img src="/assets/dist/images/Calvary-Logo_White.png" alt="Calvary Baptist Church logo" />
   </a>
 
-  <nav class="primary">
-    <div class="menu-toggle">
+  <nav class="primary" aria-label="Primary">
+    <button class="menu-toggle" type="button" aria-label="Open main menu" aria-expanded="false">
       <span></span>
-    </div>
+    </button>
 
-    <ul class="navigation">
+    <ul class="navigation" id="primary-navigation">
       <li><a href="/sermons" class="nav-item sermons">Sermons</a></li>
       <li><a href="/our-beliefs" class="nav-item events">Our Beliefs</a></li>
       <!-- <li><a href="/events" class="nav-item events">Events</a></li> -->
-      <li><span class="nav-item ministries">Ministries</span>
+      <li class="has-subnav">
+        <button class="nav-item nav-submenu-toggle ministries" type="button" aria-expanded="false">Ministries</button>
         <ul class="subnav">
           <li><a href="/ministries/awana">AWANA</a></li>
           <li><a href="/ministries/youth">Youth</a></li>
+          <li><a href="/resources/souls-training-ground">Soul's Training Ground</a></li>
         </ul>
       </li>
       <!-- <li><span class="nav-item resources">Resources</span>
@@ -76,7 +79,9 @@
 
       <!-- <li><a href="https://tithe.ly/give?c=6399118" target="_blank" class="nav-item give">Give</a></li> -->
 
-      <li><span class="nav-item get-involved">Get Involved</span>
+      <li class="has-subnav">
+        <button class="nav-item nav-submenu-toggle get-involved" type="button" aria-expanded="false">Get
+          Involved</button>
         <ul class="subnav">
           <li><a href="/serve" class="serve">Serve</a></li>
           <li><a href="/contact" class="contact">Contact</a></li>
@@ -217,7 +222,7 @@
     <div class="contact">
       <div>
         <figure class="logo">
-          <img src="/assets/dist/images/Calvary-Logo_White.png" alt="" />
+          <img src="/assets/dist/images/Calvary-Logo_White.png" alt="Calvary Baptist Church logo" />
         </figure>
         <address>
           104 S. Yates<br />
@@ -266,8 +271,8 @@
                           Bulletin</label>
 
                         <div class="entry__field">
-                          <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off"
-                            placeholder="EMAIL" data-required="true" required />
+                          <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email"
+                            inputmode="email" placeholder="EMAIL" data-required="true" required />
                         </div>
                       </div>
 
@@ -308,11 +313,12 @@
       <p>Now then we are ambassadors for Christ, as though God did beseech you by us; we pray you in Christ's
         stead, be ye reconciled to God. <a
           href="https://www.biblegateway.com/passage/?search=2+Corinthians+5%3A20&version=KJV" target="_blank"
-          class="scrip-address">2 Corinthians 5:20</a></p>
+          rel="noopener noreferrer" class="scrip-address">2 Corinthians 5:20</a></p>
 
     </div>
     <div class="thanks attribution">
-      <a href="https://www.flaticon.com/free-icons/pray" target="_blank" title="pray icons">Pray icons created by
+      <a href="https://www.flaticon.com/free-icons/pray" target="_blank" rel="noopener noreferrer"
+        title="pray icons">Pray icons created by
         Freepik - Flaticon</a>
     </div>
   </div>

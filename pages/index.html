@@ -2,6 +2,74 @@
 @include('../partials/head.html')
 
 <body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .vbs-section {
+      background: url('/assets/dist/images/wonderfully-made-bg.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    .vbs-section .section-content {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .vbs-section h2 {
+      margin: 0 0 30px;
+      font-size: 3em;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .vbs-section .details {
+      margin: 20px 0;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .vbs-section .details.tba {
+      font-weight: 400;
+    }
+
+    .vbs-section .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .vbs-section .btn:hover {
+      background-color: #e68900;
+    }
+
+    .vbs-section .svg-logo {
+      width: 250px;
+      height: auto;
+      margin: 20px auto;
+    }
+  </style>
 
   @include('../partials/messenger.html')
 
@@ -14,7 +82,7 @@
         Get Started
       </a>
     </div>
-    <div class="mouse" tabindex="-1"></div>
+    <div class="mouse" aria-hidden="true"></div>
   </div>
   <div class="page-content">
     <!-- Sermons - We're Leading in the Market -->
@@ -26,13 +94,14 @@
             <p class="callout-text">These our our Sunday messages for life's journey. Join us at 11am each
               week as we aim to walk worthy of the calling.<span class="scripture-reference">Eph 4:1</span></p>
             <p>Have any questions? Message us on <a href="https://www.facebook.com/profile.php?id=100077434054540"
-                target="_blank">Facebook Messenger</a></p>
+                target="_blank" rel="noopener noreferrer">Facebook Messenger</a></p>
           </div>
           <div class="link-images">
-            <figure class="main-image"><img src="/assets/dist/images/sanctuary.png" /></figure>
+            <figure class="main-image"><img src="/assets/dist/images/sanctuary.png"
+                alt="Calvary Baptist Church sanctuary" loading="lazy" /></figure>
             <figure class="sub-image">
               <div class="video-embed">
-                <img src="/assets/dist/images/maxresdefault.webp" alt="">
+                <img src="/assets/dist/images/maxresdefault.webp" alt="Recent sermon video preview" loading="lazy">
               </div>
             </figure>
           </div>
@@ -52,7 +121,22 @@
       </div>
     </section>
 
-    <!-- //Ministries - Questions Answers -->
+    <section aria-label="Wonderfully Made Vacation Bible Camp details" class="vbs-section">
+      <div class="section-content">
+        <img src="/assets/dist/images/wonderfully-made.png" alt="Wonderfully Made Vacation Bible Camp logo"
+          class="svg-logo">
+        <h2>Wonderfully Made</h2>
+        <p class="details">Vacation Bible Camp 2026</p>
+        <p class="details tba">Dates: To Be Announced</p>
+        <p class="details tba">Time: To Be Announced</p>
+        <p class="details">Calvary Baptist Church</p>
+        <a class="btn btn-secondary" href="https://form.jotform.com/261024686568162" target="_blank"
+          rel="noopener noreferrer">
+          Get Updates
+        </a>
+      </div>
+    </section>
+    <!-- //Ministries - Questions Answers
     <section class="ministries">
       <div class="section-content">
         <h2>Our Ministries</h2>
@@ -72,9 +156,9 @@
           <div class="accordion">
             <h3 class="acc-title">VBS</h3>
             <div class="acc-content">
-              <h4>Backyard Bible Camp</h4>
-              <p>We are excited to present our Backyard Bible Camp this year, which will focus on deepening our
-                understanding of scripture and learning effective evangelism techniques. Throughout the camp, children
+              <h4>Wonderfully Made Vacation Bible Camp</h4>
+              <p>We are excited to present our Wonderfully Made Vacation Bible Camp this year, with a focus on helping
+                children see who they are in Christ through Scripture, worship, and hands-on learning. Throughout camp, children
                 will engage in interactive Bible lessons, hands-on activities, and fun games, all designed to equip them
                 with the knowledge and confidence to share their faith with others.</p>
             </div>
@@ -99,7 +183,7 @@
         </div>
       </div>
     </section>
-
+-->
     <!-- //Call to Action -->
     <section class="callout-section">
       <div class="section-content">
