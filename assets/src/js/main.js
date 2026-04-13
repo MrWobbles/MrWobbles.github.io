@@ -137,11 +137,13 @@ $(function () {
 
   if ($trainingLab.length) {
     var $cards = $trainingLab.find('.discipline-card');
+    var $categories = $trainingLab.find('.discipline-category');
     var $natureButtons = $('[data-filter-nature]');
     var $goalFilter = $('#discipline-goal-filter');
     var $searchFilter = $('#discipline-search');
     var $emptyState = $('.training-empty-state');
     var $resultCount = $('.training-result-count');
+    var $printButton = $('#print-selected-disciplines');
 
     var activeNature = 'all';
 
@@ -154,6 +156,180 @@ $(function () {
         .split(/[\s,]+/)
         .map(function (item) { return item.trim().toLowerCase(); })
         .indexOf(expected) !== -1;
+    }
+
+    function escapeHtml(raw) {
+      return $('<div>').text(raw || '').html();
+    }
+
+    function buildChecklistMarkup() {
+      var checkboxCount = 0;
+
+      $cards.each(function () {
+        var $card = $(this);
+        var cardTitle = $.trim($card.find('h3').first().text());
+        $card.attr('data-card-title', cardTitle);
+
+        $card.find('ul > li').each(function () {
+          var $item = $(this);
+
+          if ($item.find('.discipline-check-input').length) {
+            return;
+          }
+
+          checkboxCount += 1;
+
+          var checkboxId = 'discipline-check-' + checkboxCount;
+          var instructionHtml = $item.html();
+          var $label = $('<label/>', {
+            'class': 'discipline-check',
+            'for': checkboxId
+          });
+
+          var $checkbox = $('<input/>', {
+            'type': 'checkbox',
+            'id': checkboxId,
+            'class': 'discipline-check-input'
+          });
+
+          var $text = $('<span/>', {
+            'class': 'discipline-check-text',
+            'html': instructionHtml
+          });
+
+          $label.append($checkbox).append($text);
+          $item.empty().append($label);
+        });
+      });
+    }
+
+    function getSelectedPracticeGroups() {
+      var selectedGroups = [];
+
+      $cards.each(function () {
+        var $card = $(this);
+        var cardTitle = $card.attr('data-card-title') || $.trim($card.find('h3').first().text());
+        var $selectedItems = $card.find('.discipline-check-input:checked');
+
+        if (!$selectedItems.length) {
+          return;
+        }
+
+        var items = [];
+        $selectedItems.each(function () {
+          var $input = $(this);
+          var itemText = $.trim($input.closest('.discipline-check').find('.discipline-check-text').text() || '');
+
+          if (itemText) {
+            items.push(itemText);
+          }
+        });
+
+        if (items.length) {
+          selectedGroups.push({
+            title: cardTitle,
+            items: items
+          });
+        }
+      });
+
+      return selectedGroups;
+    }
+
+    function buildPrintDocument(groups) {
+      var sectionsHtml = '';
+      var weekDaysHtml = '';
+
+      for (var dayOffset = 0; dayOffset < 7; dayOffset += 1) {
+        var dayDate = new Date();
+        dayDate.setDate(dayDate.getDate() + dayOffset);
+
+        weekDaysHtml += '' +
+          '<span class="week-day">' +
+          '<span class="week-day-name">' + escapeHtml(dayDate.toLocaleDateString('en-US', { weekday: 'short' })) + '</span>' +
+          '<span class="week-day-date">' + escapeHtml(dayDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' })) + '</span>' +
+          '</span>';
+      }
+
+      groups.forEach(function (group) {
+        var itemsHtml = '';
+        group.items.forEach(function (item) {
+          itemsHtml += '' +
+            '<li class="task-item">' +
+            '<div class="task-line"><span class="check">[ ]</span><span>' + escapeHtml(item) + '</span></div>' +
+            '<div class="week-row">' + weekDaysHtml + '</div>' +
+            '</li>';
+        });
+
+        sectionsHtml += '' +
+          '<section class="print-group">' +
+          '<h3>' + escapeHtml(group.title) + '</h3>' +
+          '<ul>' + itemsHtml + '</ul>' +
+          '</section>';
+      });
+
+      return '' +
+        '<!doctype html>' +
+        '<html lang="en">' +
+        '<head>' +
+        '<meta charset="utf-8">' +
+        '<meta name="viewport" content="width=device-width, initial-scale=1">' +
+        '<title>Soul\'s Training Ground - Checklist</title>' +
+        '<style>' +
+        '@page{margin:.5in;}' +
+        'body{font-family:Arial,sans-serif;color:#111;margin:0;line-height:1.25;}' +
+        'h1{font-size:18pt;margin:0 0 4px;}' +
+        'h2{font-size:11pt;margin:0 0 10px;color:#444;font-weight:600;}' +
+        'h3{font-size:11pt;margin:10px 0 4px;}' +
+        'p{font-size:10pt;margin:0 0 6px;}' +
+        '.muted{color:#555;}' +
+        '.print-group{margin:0 0 8px;break-inside:avoid;page-break-inside:avoid;}' +
+        'ul{margin:0;padding:0;list-style:none;}' +
+        'li{margin:0;font-size:10pt;list-style:none;}' +
+        '.task-item{margin:0 0 8px;break-inside:avoid;page-break-inside:avoid;}' +
+        '.task-line{display:flex;gap:8px;align-items:flex-start;margin:0 0 4px;}' +
+        '.check{font-weight:700;min-width:18px;}' +
+        '.week-row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid #bbb;border-radius:4px;overflow:hidden;}' +
+        '.week-day{display:block;text-align:center;padding:3px 2px;border-right:1px solid #d0d0d0;min-height:28px;}' +
+        '.week-day:last-child{border-right:none;}' +
+        '.week-day-name{display:block;font-size:8pt;font-weight:700;line-height:1.1;}' +
+        '.week-day-date{display:block;font-size:8pt;line-height:1.1;color:#555;}' +
+        '</style>' +
+        '</head>' +
+        '<body>' +
+        '<h1>Soul\'s Training Ground</h1>' +
+        '<h2>Selected Practices Checklist</h2>' +
+        '<p class="muted">Date: ' + escapeHtml(new Date().toLocaleDateString()) + '</p>' +
+        '<p>Exercise yourself toward godliness by choosing a focused set of practices for this week. This checklist is designed to help you pursue steady spiritual formation through daily, intentional habits.</p>' +
+        '<p>Begin with one or two disciplines that are realistic for your current season, then stay consistent. At the end of the week, reflect prayerfully on what strengthened your walk with Christ and what rhythms need to be adjusted.</p>' +
+        sectionsHtml +
+        '</body>' +
+        '</html>';
+    }
+
+    function printSelectedPractices(groups) {
+      var printWindow = window.open('about:blank', '_blank', 'width=900,height=700');
+      var printHtml = buildPrintDocument(groups);
+
+      if (!printWindow) {
+        window.alert('Please allow pop-ups to print your selected plan.');
+        return;
+      }
+
+      try {
+        printWindow.document.open('text/html', 'replace');
+        printWindow.document.write(printHtml);
+        printWindow.document.close();
+
+        // Give the new document a moment to render before opening print preview.
+        window.setTimeout(function () {
+          printWindow.focus();
+          printWindow.print();
+        }, 100);
+      } catch (error) {
+        printWindow.close();
+        window.alert('Unable to open print preview. Please allow pop-ups for this site and try again.');
+      }
     }
 
     function applyDisciplineFilters() {
@@ -180,6 +356,13 @@ $(function () {
         }
       });
 
+      $categories.each(function () {
+        var $category = $(this);
+        var hasVisibleCards = $category.find('.discipline-card:not(.is-hidden)').length > 0;
+        $category.prop('hidden', !hasVisibleCards);
+        $category.attr('aria-hidden', (!hasVisibleCards).toString());
+      });
+
       $emptyState.prop('hidden', visibleCount !== 0);
       $resultCount.text(visibleCount + ' discipline' + (visibleCount === 1 ? '' : 's') + ' shown');
     }
@@ -195,6 +378,20 @@ $(function () {
     $goalFilter.on('change', applyDisciplineFilters);
     $searchFilter.on('input', applyDisciplineFilters);
 
+    if ($printButton.length) {
+      $printButton.on('click', function () {
+        var groups = getSelectedPracticeGroups();
+
+        if (!groups.length) {
+          window.alert('Select at least one practice before printing.');
+          return;
+        }
+
+        printSelectedPractices(groups);
+      });
+    }
+
+    buildChecklistMarkup();
     applyDisciplineFilters();
   }
 });

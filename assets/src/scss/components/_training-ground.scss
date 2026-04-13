@@ -1,8 +1,6 @@
 .training-ground-page {
   .training-intro {
-    background:
-      radial-gradient(circle at 5% 8%, rgba(212, 175, 55, 0.25), transparent 35%),
-      radial-gradient(circle at 95% 90%, rgba(37, 92, 128, 0.2), transparent 40%), #fcfcfb;
+    background: #fff;
     text-align: center;
 
     h1 {
@@ -26,8 +24,55 @@
     }
   }
 
+  .training-note {
+    background: #fff;
+    text-align: center;
+
+    h2,
+    p {
+      color: #0f0d1d;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+
+    p {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+      line-height: 1.7;
+    }
+  }
+
   .training-controls-section {
+    background: #a42426;
     padding: 70px 0;
+
+    .filter-label,
+    .training-result-count {
+      color: #fff;
+    }
+
+    .nature-filter button,
+    .goal-filter select,
+    .search-filter input,
+    .print-actions textarea {
+      border-color: #f8c8c8;
+      background: #fff;
+      color: #0f0d1d;
+    }
+
+    .nature-filter button {
+      &.is-active,
+      &:hover,
+      &:focus {
+        background: #0f0d1d;
+        border-color: #0f0d1d;
+        color: #fff;
+      }
+    }
   }
 
   .training-controls-shell {
@@ -35,7 +80,7 @@
     gap: 20px;
 
     @media all and (min-width: $medium) {
-      grid-template-columns: 1.2fr 0.8fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       align-items: end;
     }
   }
@@ -97,16 +142,109 @@
     font-size: 15px;
   }
 
-  .discipline-category {
-    margin: 0 0 70px;
+  .training-lab {
+    padding: 0;
 
-    &:last-child {
-      margin-bottom: 20px;
+    > .section-content {
+      max-width: none;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
+  .discipline-category {
+    margin: 0;
+    padding: 85px 0;
+
+    > .category-label,
+    > h2,
+    > .discipline-grid {
+      @include width-restrict;
+    }
+
+    > .category-focus {
+      @include width-restrict;
+      margin: 20px auto 35px;
+    }
+
+    > h2 {
+      margin-bottom: 0;
+      line-height: 1.05;
+
+      .category-subtitle {
+        color: #7f8896;
+      }
+    }
+
+    &:nth-of-type(odd) {
+      background:
+        linear-gradient(rgba(10, 13, 25, 0.86), rgba(10, 13, 25, 0.86)),
+        url('/assets/dist/images/wonderfully-made-bg.png') no-repeat center center;
+      background-size: cover;
+
+      h2,
+      h3,
+      p,
+      li {
+        color: #fff;
+      }
+
+      .category-focus,
+      .discipline-scripture {
+        color: #dbe1ea;
+
+        a {
+          color: #ffd7d7;
+        }
+      }
+
+      > h2 .category-subtitle {
+        color: #b8c5d4;
+      }
+
+      .discipline-card {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.07);
+        box-shadow: 0 22px 48px -36px rgba(0, 0, 0, 0.95);
+
+        h3,
+        p,
+        li {
+          color: #fff;
+        }
+
+        .discipline-scripture {
+          color: #dbe1ea;
+        }
+      }
+
+      .discipline-icon {
+        background: rgba(255, 255, 255, 0.14);
+
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      background: #fff;
+    }
+  }
+
+  .category-label {
+    margin: 0 0 12px;
+    @include Jost-Black;
+    text-transform: none;
+    letter-spacing: 0.02rem;
+    font-size: 16px;
+    color: #a42426;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
   .category-focus {
-    margin: 8px 0 26px;
     color: #4a5563;
     font-size: clamp(1.05rem, 1.7vw, 1.35rem);
     line-height: 1.6;
@@ -162,13 +300,57 @@
 
     ul {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 0;
+      list-style: none;
 
       li {
         margin-bottom: 12px;
         color: #1f2933;
         line-height: 1.6;
+        list-style: none;
+        padding-left: 0;
+
+        &:before {
+          display: none;
+        }
       }
+    }
+
+    .discipline-check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 8px 0;
+    }
+
+    .discipline-check-input {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      margin-top: 1px;
+      accent-color: #a42426;
+      cursor: pointer;
+      flex-shrink: 0;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+
+      &:hover {
+        box-shadow: 0 0 0 3px rgba(164, 36, 38, 0.1);
+      }
+
+      &:focus {
+        outline: 2px solid #a42426;
+        outline-offset: 2px;
+      }
+
+      &:checked {
+        box-shadow: inset 0 0 0 3px #a42426;
+      }
+    }
+
+    .discipline-check-text {
+      flex: 1;
+      padding-top: 2px;
     }
   }
 
@@ -196,6 +378,9 @@
   }
 
   .training-empty-state {
+    @include width-restrict;
+    margin-top: 40px;
+    margin-bottom: 40px;
     text-align: center;
     padding: 35px;
     border: 1px dashed #b8c5d4;
@@ -214,24 +399,139 @@
     }
   }
 
-  .training-note {
-    text-align: center;
+  .training-print-sheet {
+    display: none;
+  }
 
-    h2,
-    p {
+  .print-sticky-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #a42426;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(164, 36, 38, 0.4);
+    transition: all 0.25s ease-in-out;
+    z-index: 1000;
+
+    &:hover,
+    &:focus {
+      background: #8a1d1f;
+      box-shadow: 0 6px 16px rgba(164, 36, 38, 0.6);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .print-sheet-inner {
+    color: #0f0d1d;
+    padding: 0.4in 0.5in;
+    font-size: 11pt;
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 18pt;
+      text-transform: none;
       color: #0f0d1d;
     }
 
-    h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      margin-bottom: 16px;
+    h3 {
+      margin: 0 0 4px;
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: none;
+      color: #0f0d1d;
     }
 
-    p {
-      max-width: 980px;
-      margin: 0 auto;
-      font-size: clamp(1.1rem, 1.9vw, 1.35rem);
-      line-height: 1.7;
+    p,
+    li {
+      color: #111;
+      font-size: 10pt;
+      line-height: 1.3;
+      margin: 0;
     }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 16px;
+
+      li {
+        margin-bottom: 4px;
+        list-style: none;
+        padding-left: 0;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    .print-date {
+      margin: 0 0 8px;
+      font-size: 9pt;
+      color: #555;
+    }
+
+    .print-instructions,
+    .print-reminder,
+    .print-selected-items {
+      margin-bottom: 8px;
+    }
+
+    .print-group {
+      margin-bottom: 6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+}
+
+@media print {
+  body.printing-training-sheet {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    width: 100vw;
+    height: auto;
+  }
+
+  body.printing-training-sheet > * {
+    display: none !important;
+  }
+
+  body.printing-training-sheet .page-content {
+    display: block !important;
+  }
+
+  body.printing-training-sheet .training-print-sheet {
+    display: block !important;
+    position: static;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.printing-training-sheet .training-print-sheet * {
+    display: block !important;
+  }
+
+  .print-sheet-inner ul,
+  .print-sheet-inner ol {
+    list-style: none;
+    padding-left: 0;
   }
 }
