@@ -143,3 +143,4 @@ function watchToBuild() {
 
 exports.default = series(minifyImages, buildScripts, buildThemeStyles, fileInclude, watchToBuild);
 exports.fileInclude = series(fileInclude);
+exports.build = series(buildScripts, buildThemeStyles, fileInclude);

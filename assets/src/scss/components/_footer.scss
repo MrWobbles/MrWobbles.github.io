@@ -70,7 +70,8 @@ footer {
 
     .copyright{
         text-align: center;
-        white-space: nowrap;
+        white-space: normal;
+        overflow-wrap: anywhere;
         margin: 60px auto 0;
         min-width: 100%;
     }

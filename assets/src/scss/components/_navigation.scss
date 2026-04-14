@@ -24,12 +24,14 @@ nav.primary {
       position: fixed;
       padding: 0;
       width: 100vw;
-      height: calc(100vh - 150px);
+      height: calc(100dvh - var(--nav-height));
       background: rgba(0, 0, 0, 0.9);
       left: 100%;
-      top: 115px;
+      top: var(--nav-height);
       z-index: 10;
       flex-direction: column;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       transition: 0.33s all ease-in-out;
 
       @media all and (min-width: 1280px) {
@@ -37,6 +39,7 @@ nav.primary {
         display: flex;
         align-items: center;
         width: 100%;
+        overflow: visible;
         height: auto;
         background: transparent;
         flex-direction: row;
@@ -50,8 +53,8 @@ nav.primary {
 
       li {
         padding: 0;
-        line-height: 100px;
-        min-height: 100px;
+        line-height: 72px;
+        min-height: 72px;
         margin: 0;
         position: relative;
 

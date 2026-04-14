@@ -50,7 +50,8 @@
 .subpage .page-content {
   .section-content {
     text-align: left;
-    width: 980px;
+    width: 100%;
+    max-width: 980px;
   }
 
   .section-icon {

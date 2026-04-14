@@ -3,7 +3,7 @@ header {
     display: flex;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    height: 115px;
+    height: var(--nav-height);
     box-sizing: border-box;
     top: 0;
     width: 100%;
