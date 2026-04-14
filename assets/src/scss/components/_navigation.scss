@@ -131,15 +131,39 @@ nav.primary {
       }
 
       a {
-        width: 26px;
+        width: 55px;
         height: 100%;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: transparent no-repeat center;
-        background-size: 14px;
+        background-size: 30px;
+
+        @media all and (min-width: 1280px) {
+          width: 26px;
+          background-size: 14px;
+        }
       }
 
       a.facebook {
-        background-image: url("/assets/dist/images/facebook.png");
+        background-image: none;
+
+        &::before {
+          content: "facebook";
+          color: #fff;
+          font-family: "Material Symbols Outlined";
+          font-size: 30px;
+          line-height: 1;
+          font-variation-settings:
+            "FILL" 1,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24;
+
+          @media all and (min-width: 1280px) {
+            font-size: 14px;
+          }
+        }
       }
 
       a.youtube {
