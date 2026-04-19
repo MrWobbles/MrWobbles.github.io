@@ -31,6 +31,11 @@ function Upload($local, $remotePath) {
 Upload "assets\dist\js\main.js"   "assets/dist/js/main.js"
 Upload "assets\dist\css\main.css" "assets/dist/css/main.css"
 
+$imageFiles = Get-ChildItem "assets\dist\images" -File
+foreach ($image in $imageFiles) {
+    Upload $image.FullName "assets/dist/images/$($image.Name)"
+}
+
 # ── Config ────────────────────────────────────────────────────────────────────
 Upload ".htaccess" ".htaccess"
 
